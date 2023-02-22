@@ -1,0 +1,1844 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20224.22.1117.1841                               -->
+<workbook original-version='18.1' source-build='2022.4.0 (20224.22.1117.1841)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='Allergy_16770827471540' path='/workbooks' revision='1.6' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
+        <calculation class='tableau' formula='&quot;By Age&quot;' />
+        <members>
+          <member value='&quot;Overview&quot;' />
+          <member value='&quot;By Sex&quot;' />
+          <member value='&quot;By Age&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='session+ (dost_chatbot_db)' inline='true' name='federated.0f8t4060sgfuso1919sgh0uiec7a' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='mysql.0g8axqf0lmp9h418oa56o03py4s0'>
+            <connection class='mysql' dbname='dost_chatbot_db' odbc-native-protocol='' one-time-sql='' port='3310' server='localhost' source-charset='' username='root' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT a.*, c.age, c.sex&#13;
+FROM allergy AS a&#13;
+JOIN session s ON a.allergy_id = s.allergy_id&#13;
+JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT a.*, c.age, c.sex&#13;
+FROM allergy AS a&#13;
+JOIN session s ON a.allergy_id = s.allergy_id&#13;
+JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>allergy_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[allergy_id]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>allergy_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>has_allergy</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[has_allergy]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>has_allergy</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_nuts</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_nuts]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_nuts</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_dairy</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_dairy]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_dairy</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_eggs</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_eggs]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_eggs</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_seafood</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_seafood]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_seafood</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_drugs</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_drugs]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_drugs</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_others</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_others]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_others</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>allergic_to_animal_fur</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[allergic_to_animal_fur]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>allergic_to_animal_fur</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_difficulty_breathing</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_difficulty_breathing]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_difficulty_breathing</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_itching</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_itching]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_itching</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_swellingfelt_redness</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_swellingfelt_redness]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_swellingfelt_redness</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_sneezing</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_sneezing]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_sneezing</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_runny_nose</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_runny_nose]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_runny_nose</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_cough</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_cough]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_cough</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_fatigue</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_fatigue]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_fatigue</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_headache</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_headache]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_headache</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_nausea_and_vomiting</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_nausea_and_vomiting]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_nausea_and_vomiting</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>side_effect_duration</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[side_effect_duration]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>side_effect_duration</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>applied_liniment</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[applied_liniment]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>applied_liniment</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stayed_away_from_allergens</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[stayed_away_from_allergens]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>stayed_away_from_allergens</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>applied_other_interventions</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[applied_other_interventions]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>applied_other_interventions</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>are_symptoms_relieved</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[are_symptoms_relieved]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>are_symptoms_relieved</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>16</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_STINYINT&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sex</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[sex]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>sex</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>1</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]&quot;' value='🥛 Dairy' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]&quot;' value='💊 Drugs' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]&quot;' value='🥚 Eggs' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]&quot;' value='🥜 Nuts' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]&quot;' value='🦀 Seafood' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;' value='💡 Others' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]&quot;' value='😊 No Allergies' />
+        </aliases>
+      </column>
+      <column caption='Allergic to Dairy' datatype='integer' name='[Calculation_92323858373324800]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;Yes&apos; THEN [is_allergic_to_dairy] END)' />
+      </column>
+      <column caption='Allergic to Drugs' datatype='integer' name='[Calculation_92323858373599233]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_drugs] = &apos;Yes&apos; THEN [is_allergic_to_drugs] END)' />
+      </column>
+      <column caption='Allergic to Eggs' datatype='integer' name='[Calculation_92323858421100546]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_eggs] = &apos;Yes&apos; THEN [is_allergic_to_eggs] END)' />
+      </column>
+      <column caption='Allergic to Nuts' datatype='integer' name='[Calculation_92323858421231619]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_nuts] = &apos;Yes&apos; THEN [is_allergic_to_nuts] END)' />
+      </column>
+      <column caption='Allergic to Seafood' datatype='integer' name='[Calculation_92323858422657029]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_seafood] = &apos;Yes&apos; THEN [is_allergic_to_seafood] END)' />
+      </column>
+      <column caption='Allergic to Others' datatype='integer' name='[Calculation_92323858422738950]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_others] = &apos;Yes&apos; THEN [is_allergic_to_others] END)' />
+      </column>
+      <column caption='Allergic to None' datatype='integer' name='[Calculation_92323858447249420]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_drugs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_eggs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_nuts] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_others] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_seafood] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+      </column>
+      <column caption='Chosen Chart' datatype='string' name='[Calculation_92323858450083853]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Custom SQL Query' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[_EC89F11895ED4BCFA1480778164C0944]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[age]' role='measure' type='ordinal'>
+        <aliases>
+          <alias key='6' value='6 years old' />
+          <alias key='7' value='7 years old' />
+          <alias key='8' value='8 years old' />
+          <alias key='9' value='9 years old' />
+        </aliases>
+      </column>
+      <column datatype='string' hidden='true' name='[allergic_to_animal_fur]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[allergy_id]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[applied_liniment]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[applied_other_interventions]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[are_symptoms_relieved]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_cough]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_difficulty_breathing]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_fatigue]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_headache]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_itching]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_nausea_and_vomiting]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_runny_nose]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_sneezing]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_swellingfelt_redness]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[has_allergy]' role='dimension' type='nominal' />
+      <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
+      <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
+      <column datatype='string' name='[sex]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;F&quot;' value='Female' />
+          <alias key='&quot;M&quot;' value='Male' />
+        </aliases>
+      </column>
+      <column datatype='string' hidden='true' name='[side_effect_duration]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[stayed_away_from_allergens]' role='dimension' type='nominal' />
+      <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[sex]' derivation='None' name='[none:sex:nk]' pivot='key' type='nominal' />
+      <column-instance column='[age]' derivation='Sum' name='[sum:age:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858373324800]' derivation='User' name='[usr:Calculation_92323858373324800:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858373599233]' derivation='User' name='[usr:Calculation_92323858373599233:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858421100546]' derivation='User' name='[usr:Calculation_92323858421100546:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858421231619]' derivation='User' name='[usr:Calculation_92323858421231619:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858422657029]' derivation='User' name='[usr:Calculation_92323858422657029:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858422738950]' derivation='User' name='[usr:Calculation_92323858422738950:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_GB' class='hyper' dbname='C:/Users/Edward/Documents/My Tableau Repository/Datasources/session+ (dost_chatbot_db).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='02/22/2023 04:18:42 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='session+ (dost_chatbot_db)' increment-value='%null%' refresh-type='create' rows-inserted='30' timestamp-start='2023-02-22 16:18:41.832' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_nuts</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_nuts]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_nuts</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_dairy</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_dairy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_dairy</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_eggs</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_eggs]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_eggs</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_seafood</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_seafood]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_seafood</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_drugs</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_drugs]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_drugs</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_others</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_others]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_others</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>age</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sex</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[sex]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sex</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.629464' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.370536' show-aliased-fields='true' show-hidden-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858426740743:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[sum:age:qk]&quot;</bucket>
+            </map>
+            <map to='#f6c760'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858427232264:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:sex:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;M&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;F&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:age:ok]' palette='tableau20_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>232</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>9</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
+          <calculation class='tableau' formula='&quot;By Age&quot;' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Custom SQL Query' id='_EC89F11895ED4BCFA1480778164C0944'>
+            <properties context=''>
+              <relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT a.*, c.age, c.sex&#13;
+FROM allergy AS a&#13;
+JOIN session s ON a.allergy_id = s.allergy_id&#13;
+JOIN child c ON s.child_id = c.child_id</relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Allergens'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='session+ (dost_chatbot_db)' name='federated.0f8t4060sgfuso1919sgh0uiec7a' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
+              <calculation class='tableau' formula='&quot;By Age&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0f8t4060sgfuso1919sgh0uiec7a'>
+            <column caption='Allergic to Dairy' datatype='integer' name='[Calculation_92323858373324800]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;Yes&apos; THEN [is_allergic_to_dairy] END)' />
+            </column>
+            <column caption='Allergic to Drugs' datatype='integer' name='[Calculation_92323858373599233]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_drugs] = &apos;Yes&apos; THEN [is_allergic_to_drugs] END)' />
+            </column>
+            <column caption='Allergic to Eggs' datatype='integer' name='[Calculation_92323858421100546]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_eggs] = &apos;Yes&apos; THEN [is_allergic_to_eggs] END)' />
+            </column>
+            <column caption='Allergic to Nuts' datatype='integer' name='[Calculation_92323858421231619]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_nuts] = &apos;Yes&apos; THEN [is_allergic_to_nuts] END)' />
+            </column>
+            <column caption='Allergic to Seafood' datatype='integer' name='[Calculation_92323858422657029]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_seafood] = &apos;Yes&apos; THEN [is_allergic_to_seafood] END)' />
+            </column>
+            <column caption='Allergic to Others' datatype='integer' name='[Calculation_92323858422738950]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_others] = &apos;Yes&apos; THEN [is_allergic_to_others] END)' />
+            </column>
+            <column caption='Allergic to None' datatype='integer' name='[Calculation_92323858447249420]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_drugs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_eggs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_nuts] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_others] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_seafood] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+            </column>
+            <column caption='Chosen Chart' datatype='string' name='[Calculation_92323858450083853]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+            </column>
+            <column datatype='string' name='[is_allergic_to_dairy]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_drugs]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_eggs]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_others]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_92323858450083853]' derivation='None' name='[none:Calculation_92323858450083853:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_92323858373324800]' derivation='User' name='[usr:Calculation_92323858373324800:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858373599233]' derivation='User' name='[usr:Calculation_92323858373599233:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858421100546]' derivation='User' name='[usr:Calculation_92323858421100546:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858421231619]' derivation='User' name='[usr:Calculation_92323858421231619:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858422657029]' derivation='User' name='[usr:Calculation_92323858422657029:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858422738950]' derivation='User' name='[usr:Calculation_92323858422738950:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]'>
+            <groupfilter function='member' level='[none:Calculation_92323858450083853:nk]' member='&quot;Overview&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</column>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]' scope='cols' value='Number of Children' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='44' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]' value='n#,##0;-#,##0' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]' value='N' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='112' />
+            <format attr='background-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='data-highlighter-title'>
+            <format attr='title' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='Allergens' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>Allergen:&#9;  </run>
+                <run><![CDATA[<[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]>
+]]></run>
+                <run bold='true'>Num. Children:</run>
+                <run><![CDATA[	  <[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.2413811683654785' />
+                <format attr='mark-color' value='#72b966' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</rows>
+        <cols>[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{C90475A1-3551-40B1-BC15-2BF5704555EE}' />
+    </worksheet>
+    <worksheet name='Allergens - Age'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='session+ (dost_chatbot_db)' name='federated.0f8t4060sgfuso1919sgh0uiec7a' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
+              <calculation class='tableau' formula='&quot;By Age&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0f8t4060sgfuso1919sgh0uiec7a'>
+            <column caption='Allergic to Dairy' datatype='integer' name='[Calculation_92323858373324800]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;Yes&apos; THEN [is_allergic_to_dairy] END)' />
+            </column>
+            <column caption='Allergic to Drugs' datatype='integer' name='[Calculation_92323858373599233]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_drugs] = &apos;Yes&apos; THEN [is_allergic_to_drugs] END)' />
+            </column>
+            <column caption='Allergic to Eggs' datatype='integer' name='[Calculation_92323858421100546]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_eggs] = &apos;Yes&apos; THEN [is_allergic_to_eggs] END)' />
+            </column>
+            <column caption='Allergic to Nuts' datatype='integer' name='[Calculation_92323858421231619]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_nuts] = &apos;Yes&apos; THEN [is_allergic_to_nuts] END)' />
+            </column>
+            <column caption='Allergic to Seafood' datatype='integer' name='[Calculation_92323858422657029]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_seafood] = &apos;Yes&apos; THEN [is_allergic_to_seafood] END)' />
+            </column>
+            <column caption='Allergic to Others' datatype='integer' name='[Calculation_92323858422738950]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_others] = &apos;Yes&apos; THEN [is_allergic_to_others] END)' />
+            </column>
+            <column caption='Allergic to None' datatype='integer' name='[Calculation_92323858447249420]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_drugs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_eggs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_nuts] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_others] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_seafood] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+            </column>
+            <column caption='Chosen Chart' datatype='string' name='[Calculation_92323858450083853]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+            </column>
+            <column datatype='integer' name='[age]' role='measure' type='ordinal'>
+              <aliases>
+                <alias key='6' value='6 years old' />
+                <alias key='7' value='7 years old' />
+                <alias key='8' value='8 years old' />
+                <alias key='9' value='9 years old' />
+              </aliases>
+            </column>
+            <column datatype='string' name='[is_allergic_to_dairy]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_drugs]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_eggs]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_others]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_92323858450083853]' derivation='None' name='[none:Calculation_92323858450083853:nk]' pivot='key' type='nominal' />
+            <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_92323858373324800]' derivation='User' name='[usr:Calculation_92323858373324800:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858373599233]' derivation='User' name='[usr:Calculation_92323858373599233:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858421100546]' derivation='User' name='[usr:Calculation_92323858421100546:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858421231619]' derivation='User' name='[usr:Calculation_92323858421231619:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858422657029]' derivation='User' name='[usr:Calculation_92323858422657029:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858422738950]' derivation='User' name='[usr:Calculation_92323858422738950:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]'>
+            <groupfilter function='member' level='[none:Calculation_92323858450083853:nk]' member='&quot;By Age&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate' />
+          </filter>
+          <alphabetic-sort column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' direction='ASC' />
+          <slices>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</column>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]' scope='cols' value='Number of Children' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='44' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]' value='n#,##0;-#,##0' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]' value='N' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='112' />
+            <format attr='background-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='data-highlighter-title'>
+            <format attr='title' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='Allergens' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>Allergen:&#9;  </run>
+                <run><![CDATA[<[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]>
+]]></run>
+                <run bold='true'>Age:&#9;  </run>
+                <run><![CDATA[ <[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]> 
+]]></run>
+                <run bold='true'>Num. Children:</run>
+                <run><![CDATA[	   <[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.2413811683654785' />
+                <format attr='mark-color' value='#72b966' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</rows>
+        <cols>[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{D7436676-AAB7-4413-812B-14B76720A9C7}' />
+    </worksheet>
+    <worksheet name='Allergens - Sex'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='session+ (dost_chatbot_db)' name='federated.0f8t4060sgfuso1919sgh0uiec7a' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
+              <calculation class='tableau' formula='&quot;By Age&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0f8t4060sgfuso1919sgh0uiec7a'>
+            <column caption='Allergic to Dairy' datatype='integer' name='[Calculation_92323858373324800]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;Yes&apos; THEN [is_allergic_to_dairy] END)' />
+            </column>
+            <column caption='Allergic to Drugs' datatype='integer' name='[Calculation_92323858373599233]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_drugs] = &apos;Yes&apos; THEN [is_allergic_to_drugs] END)' />
+            </column>
+            <column caption='Allergic to Eggs' datatype='integer' name='[Calculation_92323858421100546]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_eggs] = &apos;Yes&apos; THEN [is_allergic_to_eggs] END)' />
+            </column>
+            <column caption='Allergic to Nuts' datatype='integer' name='[Calculation_92323858421231619]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_nuts] = &apos;Yes&apos; THEN [is_allergic_to_nuts] END)' />
+            </column>
+            <column caption='Allergic to Seafood' datatype='integer' name='[Calculation_92323858422657029]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_seafood] = &apos;Yes&apos; THEN [is_allergic_to_seafood] END)' />
+            </column>
+            <column caption='Allergic to Others' datatype='integer' name='[Calculation_92323858422738950]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_others] = &apos;Yes&apos; THEN [is_allergic_to_others] END)' />
+            </column>
+            <column caption='Allergic to None' datatype='integer' name='[Calculation_92323858447249420]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_drugs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_eggs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_nuts] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_others] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_seafood] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+            </column>
+            <column caption='Chosen Chart' datatype='string' name='[Calculation_92323858450083853]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+            </column>
+            <column datatype='string' name='[is_allergic_to_dairy]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_drugs]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_eggs]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_others]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_92323858450083853]' derivation='None' name='[none:Calculation_92323858450083853:nk]' pivot='key' type='nominal' />
+            <column-instance column='[sex]' derivation='None' name='[none:sex:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[sex]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;F&quot;' value='Female' />
+                <alias key='&quot;M&quot;' value='Male' />
+              </aliases>
+            </column>
+            <column-instance column='[Calculation_92323858373324800]' derivation='User' name='[usr:Calculation_92323858373324800:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858373599233]' derivation='User' name='[usr:Calculation_92323858373599233:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858421100546]' derivation='User' name='[usr:Calculation_92323858421100546:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858421231619]' derivation='User' name='[usr:Calculation_92323858421231619:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858422657029]' derivation='User' name='[usr:Calculation_92323858422657029:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858422738950]' derivation='User' name='[usr:Calculation_92323858422738950:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]'>
+            <groupfilter function='member' level='[none:Calculation_92323858450083853:nk]' member='&quot;By Sex&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate' />
+          </filter>
+          <alphabetic-sort column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' direction='ASC' />
+          <slices>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</column>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]' scope='cols' value='Number of Children' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='44' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]' value='n#,##0;-#,##0' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]' value='N' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='112' />
+            <format attr='background-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' value='By Sex' />
+          </style-rule>
+          <style-rule element='data-highlighter-title'>
+            <format attr='title' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='Allergens' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' />
+              <lod column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>Allergen:&#9;  </run>
+                <run><![CDATA[<[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]>
+]]></run>
+                <run bold='true'>Sex:&#9;  </run>
+                <run><![CDATA[ <[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]>
+]]></run>
+                <run bold='true'>Num. Children:</run>
+                <run><![CDATA[	  <[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.2413811683654785' />
+                <format attr='mark-color' value='#72b966' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</rows>
+        <cols>[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{D4AF475D-1CEC-4157-9417-EFEF59535788}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard - Allergens'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
+          <calculation class='tableau' formula='&quot;By Age&quot;' />
+          <members>
+            <member value='&quot;Overview&quot;' />
+            <member value='&quot;By Sex&quot;' />
+            <member value='&quot;By Age&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97298' id='5' param='horz' type-v2='layout-flow' w='82959' x='704' y='1351'>
+            <zone h='97298' id='1' param='vert' type-v2='layout-flow' w='82959' x='704' y='1351'>
+              <zone h='0' id='3' name='Allergens' show-title='false' w='82959' x='704' y='1351'>
+                <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='0' id='8' name='Allergens - Sex' show-title='false' w='82959' x='704' y='1351'>
+                <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='97295' id='10' name='Allergens - Age' show-title='false' w='82959' x='704' y='1351'>
+                <layout-cache cell-count-h='7' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone fixed-size='160' h='97298' id='4' is-fixed='true' param='vert' type-v2='layout-flow' w='15633' x='83663' y='1351'>
+            <zone h='8783' id='7' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15633' x='83663' y='1351'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='1520' id='6' name='Allergens' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15633' x='83663' y='10134'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='1520' id='9' name='Allergens - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15633' x='83663' y='11654'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='14865' id='11' name='Allergens - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15633' x='83663' y='13174'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1150' minheight='1150' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='49' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97298' id='48' param='vert' type-v2='layout-flow' w='98592' x='704' y='1351'>
+                <zone fixed-size='280' h='0' id='3' is-fixed='true' name='Allergens' show-title='false' w='82959' x='704' y='1351'>
+                  <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='1520' id='6' name='Allergens' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15633' x='83663' y='10134'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='0' id='8' is-fixed='true' name='Allergens - Sex' show-title='false' w='82959' x='704' y='1351'>
+                  <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='1520' id='9' name='Allergens - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15633' x='83663' y='11654'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='97295' id='10' is-fixed='true' name='Allergens - Age' show-title='false' w='82959' x='704' y='1351'>
+                  <layout-cache cell-count-h='7' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='14865' id='11' name='Allergens - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15633' x='83663' y='13174'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8783' id='7' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15633' x='83663' y='1351'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{6DD58197-02D4-41B1-822F-74BB1E579276}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Allergens'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{ECE5F4F1-4122-4EED-9A0D-AA297CC8D48B}' />
+    </window>
+    <window class='worksheet' name='Allergens - Sex'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{82908769-CB1B-46E8-9C0A-8F45173BAA7F}' />
+    </window>
+    <window class='worksheet' name='Allergens - Age'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{65B5BE71-5CC0-4E5F-A736-87D3AD4D108C}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard - Allergens'>
+      <viewpoints>
+        <viewpoint name='Allergens'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Allergens - Age'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Allergens - Sex'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='4' />
+      <simple-id uuid='{32B150BF-5192-4119-B33B-FBF4A7E38076}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Allergens - Age' width='192'>
+      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
+      iNf6GYgAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Dashboard - Allergens' width='192'>
+      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
+      eNr/AcUo4Ur8wOvAAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
