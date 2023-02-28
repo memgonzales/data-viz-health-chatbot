@@ -17,7 +17,7 @@
     <WindowsPersistSimpleIdentifiers />
     <ZoneBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='Allergy_16770827471540' path='/workbooks' revision='2.0' />
+  <repository-location id='Allergy_16770827471540' path='/workbooks' revision='2.2' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -1504,10 +1504,10 @@ JOIN child c ON s.child_id = c.child_id</relation>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='73' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='97298' id='72' param='vert' type-v2='layout-flow' w='98614' x='693' y='1351'>
+            <zone h='100000' id='91' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97298' id='90' param='vert' type-v2='layout-flow' w='98614' x='693' y='1351'>
                 <zone fixed-size='280' h='97295' id='3' is-fixed='true' name='Allergens' show-title='false' w='82977' x='693' y='1351'>
-                  <layout-cache cell-count-h='7' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
+                  <layout-cache minwidth='212' type-h='cell' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1777,24 +1777,6 @@ JOIN child c ON s.child_id = c.child_id</relation>
         </viewpoint>
         <viewpoint name='Total'>
           <zoom type='entire-view' />
-          <selection-collection>
-            <tuple-selection>
-              <tuple-reference>
-                <tuple-descriptor>
-                  <pane-descriptor>
-                    <x-fields />
-                    <y-fields />
-                  </pane-descriptor>
-                  <columns>
-                    <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_424464333067116544:qk]</field>
-                  </columns>
-                </tuple-descriptor>
-                <tuple>
-                  <value>30</value>
-                </tuple>
-              </tuple-reference>
-            </tuple-selection>
-          </selection-collection>
         </viewpoint>
       </viewpoints>
       <active id='50' />

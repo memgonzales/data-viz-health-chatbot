@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
-<!-- build 20224.23.0209.1653                               -->
-<workbook original-version='18.1' source-build='2022.4.1 (20224.23.0209.1653)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+<!-- build 20224.22.1117.1841                               -->
+<workbook original-version='18.1' source-build='2022.4.0 (20224.22.1117.1841)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
     <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
@@ -30,8 +30,8 @@
   <datasources>
     <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
       <aliases enabled='yes' />
-      <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
-        <calculation class='tableau' formula='&quot;By Age&quot;' />
+      <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+        <calculation class='tableau' formula='&quot;Overview&quot;' />
         <members>
           <member value='&quot;Overview&quot;' />
           <member value='&quot;By Sex&quot;' />
@@ -39,18 +39,18 @@
         </members>
       </column>
     </datasource>
-    <datasource caption='session+ (dost_chatbot_db)' inline='true' name='federated.0f8t4060sgfuso1919sgh0uiec7a' version='18.1'>
+    <datasource caption='session+ (dost_chatbot_db) (2)' inline='true' name='federated.0f8t4060sgfuso1919sgh0uiec7a (copy)' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='localhost' name='mysql.0g8axqf0lmp9h418oa56o03py4s0'>
+          <named-connection caption='localhost' name='mysql.0g8axqf0lmp9h418oa56o03py4s0 (copy)'>
             <connection class='mysql' dbname='dost_chatbot_db' odbc-native-protocol='' one-time-sql='' port='3310' server='localhost' source-charset='' username='root' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT a.*, c.age, c.sex&#13;
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0 (copy)' name='Custom SQL Query' type='text'>SELECT a.*, c.child_id, c.age, c.sex&#13;
 FROM allergy AS a&#13;
 JOIN session s ON a.allergy_id = s.allergy_id&#13;
 JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.false...relation>
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT a.*, c.age, c.sex&#13;
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0 (copy)' name='Custom SQL Query' type='text'>SELECT a.*, c.child_id, c.age, c.sex&#13;
 FROM allergy AS a&#13;
 JOIN session s ON a.allergy_id = s.allergy_id&#13;
 JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true...relation>
@@ -493,12 +493,31 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
             <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
+            <remote-name>child_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[child_id]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>child_id</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
             <remote-name>age</remote-name>
             <remote-type>16</remote-type>
             <local-name>[age]</local-name>
             <parent-name>[Custom SQL Query]</parent-name>
             <remote-alias>age</remote-alias>
-            <ordinal>24</ordinal>
+            <ordinal>25</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>false</contains-null>
@@ -514,7 +533,821 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
             <local-name>[sex]</local-name>
             <parent-name>[Custom SQL Query]</parent-name>
             <remote-alias>sex</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>1</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858373324800:qk]&quot;' value='🥛 Dairy' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858373599233:qk]&quot;' value='💊 Drugs' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858421100546:qk]&quot;' value='🥚 Eggs' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858421231619:qk]&quot;' value='🥜 Nuts' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858422657029:qk]&quot;' value='🦀 Seafood' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858422738950:qk]&quot;' value='💡 Others' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858447249420:qk]&quot;' value='😊 No Allergies' />
+        </aliases>
+      </column>
+      <column caption='Num of Children' datatype='integer' name='[Calculation_424464333067116544]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD(child_id)' />
+      </column>
+      <column caption='Allergic to Dairy' datatype='integer' name='[Calculation_92323858373324800]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;Yes&apos; THEN [is_allergic_to_dairy] END)' />
+      </column>
+      <column caption='Allergic to Drugs' datatype='integer' name='[Calculation_92323858373599233]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_drugs] = &apos;Yes&apos; THEN [is_allergic_to_drugs] END)' />
+      </column>
+      <column caption='Allergic to Eggs' datatype='integer' name='[Calculation_92323858421100546]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_eggs] = &apos;Yes&apos; THEN [is_allergic_to_eggs] END)' />
+      </column>
+      <column caption='Allergic to Nuts' datatype='integer' name='[Calculation_92323858421231619]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_nuts] = &apos;Yes&apos; THEN [is_allergic_to_nuts] END)' />
+      </column>
+      <column caption='Allergic to Seafood' datatype='integer' name='[Calculation_92323858422657029]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_seafood] = &apos;Yes&apos; THEN [is_allergic_to_seafood] END)' />
+      </column>
+      <column caption='Allergic to Others' datatype='integer' name='[Calculation_92323858422738950]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_others] = &apos;Yes&apos; THEN [is_allergic_to_others] END)' />
+      </column>
+      <column caption='Allergic to None' datatype='integer' name='[Calculation_92323858447249420]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_drugs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_eggs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_nuts] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_others] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_seafood] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+      </column>
+      <column caption='Chosen Chart' datatype='string' name='[Calculation_92323858450083853]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Custom SQL Query' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[_EC89F11895ED4BCFA1480778164C0944]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[age]' role='measure' type='ordinal'>
+        <aliases>
+          <alias key='6' value='6 years old' />
+          <alias key='7' value='7 years old' />
+          <alias key='8' value='8 years old' />
+          <alias key='9' value='9 years old' />
+        </aliases>
+      </column>
+      <column datatype='string' hidden='true' name='[allergic_to_animal_fur]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[allergy_id]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[applied_liniment]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[applied_other_interventions]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[are_symptoms_relieved]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_cough]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_difficulty_breathing]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_fatigue]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_headache]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_itching]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_nausea_and_vomiting]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_runny_nose]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_sneezing]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_swellingfelt_redness]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[has_allergy]' role='dimension' type='nominal' />
+      <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
+      <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
+      <column datatype='string' name='[sex]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;F&quot;' value='Female' />
+          <alias key='&quot;M&quot;' value='Male' />
+        </aliases>
+      </column>
+      <column datatype='string' hidden='true' name='[side_effect_duration]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[stayed_away_from_allergens]' role='dimension' type='nominal' />
+      <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[sex]' derivation='None' name='[none:sex:nk]' pivot='key' type='nominal' />
+      <column-instance column='[age]' derivation='Sum' name='[sum:age:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858373324800]' derivation='User' name='[usr:Calculation_92323858373324800:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858373599233]' derivation='User' name='[usr:Calculation_92323858373599233:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858421100546]' derivation='User' name='[usr:Calculation_92323858421100546:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858421231619]' derivation='User' name='[usr:Calculation_92323858421231619:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858422657029]' derivation='User' name='[usr:Calculation_92323858422657029:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858422738950]' derivation='User' name='[usr:Calculation_92323858422738950:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_GB' class='hyper' dbname='C:/Users/Edward/Documents/My Tableau Repository/Datasources/session+ (dost_chatbot_db) copy 5.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='02/28/2023 01:43:51 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='session+ (dost_chatbot_db)' increment-value='%null%' refresh-type='create' rows-inserted='30' timestamp-start='2023-02-28 13:43:50.618' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_nuts</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_nuts]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_nuts</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_dairy</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_dairy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_dairy</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_eggs</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_eggs]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_eggs</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_seafood</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_seafood]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_seafood</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_drugs</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_drugs]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_drugs</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_others</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_others]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_others</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>child_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[child_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>child_id</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>age</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sex</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[sex]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sex</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.946136' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.0538642' show-aliased-fields='true' show-hidden-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858426740743:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858373324800:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858373599233:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858421100546:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858421231619:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858422657029:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858422738950:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[sum:age:qk]&quot;</bucket>
+            </map>
+            <map to='#f6c760'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858447249420:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858427232264:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:sex:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;M&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;F&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:age:ok]' palette='tableau20_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>232</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>9</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+          <calculation class='tableau' formula='&quot;Overview&quot;' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Custom SQL Query' id='_EC89F11895ED4BCFA1480778164C0944'>
+            <properties context=''>
+              <relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0 (copy)' name='Custom SQL Query' type='text'>SELECT a.*, c.child_id, c.age, c.sex&#13;
+FROM allergy AS a&#13;
+JOIN session s ON a.allergy_id = s.allergy_id&#13;
+JOIN child c ON s.child_id = c.child_id</relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='session+ (dost_chatbot_db)' inline='true' name='federated.0f8t4060sgfuso1919sgh0uiec7a' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='mysql.0g8axqf0lmp9h418oa56o03py4s0'>
+            <connection class='mysql' dbname='dost_chatbot_db' odbc-native-protocol='' one-time-sql='' port='3310' server='localhost' source-charset='' username='root' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT a.*, c.child_id, c.age, c.sex&#13;
+FROM allergy AS a&#13;
+JOIN session s ON a.allergy_id = s.allergy_id&#13;
+JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT a.*, c.child_id, c.age, c.sex&#13;
+FROM allergy AS a&#13;
+JOIN session s ON a.allergy_id = s.allergy_id&#13;
+JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>allergy_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[allergy_id]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>allergy_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>has_allergy</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[has_allergy]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>has_allergy</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_nuts</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_nuts]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_nuts</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_dairy</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_dairy]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_dairy</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_eggs</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_eggs]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_eggs</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_seafood</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_seafood]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_seafood</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_drugs</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_drugs]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_drugs</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_others</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_others]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_others</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>allergic_to_animal_fur</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[allergic_to_animal_fur]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>allergic_to_animal_fur</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_difficulty_breathing</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_difficulty_breathing]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_difficulty_breathing</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_itching</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_itching]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_itching</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_swellingfelt_redness</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_swellingfelt_redness]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_swellingfelt_redness</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_sneezing</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_sneezing]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_sneezing</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_runny_nose</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_runny_nose]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_runny_nose</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_cough</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_cough]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_cough</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_fatigue</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_fatigue]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_fatigue</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_headache</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_headache]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_headache</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_nausea_and_vomiting</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_nausea_and_vomiting]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_nausea_and_vomiting</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>side_effect_duration</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[side_effect_duration]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>side_effect_duration</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>applied_liniment</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[applied_liniment]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>applied_liniment</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stayed_away_from_allergens</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[stayed_away_from_allergens]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>stayed_away_from_allergens</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>applied_other_interventions</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[applied_other_interventions]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>applied_other_interventions</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>are_symptoms_relieved</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[are_symptoms_relieved]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>are_symptoms_relieved</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>child_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[child_id]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>child_id</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>16</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>age</remote-alias>
             <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_STINYINT&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sex</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[sex]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>sex</remote-alias>
+            <ordinal>26</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <width>1</width>
@@ -630,11 +1463,11 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
       <column-instance column='[Calculation_92323858422738950]' derivation='User' name='[usr:Calculation_92323858422738950:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
       <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_GB' class='hyper' dbname='C:/Users/hylen/Documents/My Tableau Repository/Datasources/session+ (dost_chatbot_db).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='02/22/2023 04:18:42 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_GB' class='hyper' dbname='C:/Users/Edward/Documents/My Tableau Repository/Datasources/session+ (dost_chatbot_db) copy .hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='02/28/2023 03:29:39 PM' username='tableau_internal_user'>
           <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <refresh>
-            <refresh-event add-from-file-path='session+ (dost_chatbot_db)' increment-value='%null%' refresh-type='create' rows-inserted='30' timestamp-start='2023-02-22 16:18:41.832' />
+            <refresh-event add-from-file-path='session+ (dost_chatbot_db)' increment-value='%null%' refresh-type='create' rows-inserted='30' timestamp-start='2023-02-28 15:29:39.518' />
           </refresh>
           <metadata-records>
             <metadata-record class='column'>
@@ -728,162 +1561,12 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
-              <remote-name>felt_difficulty_breathing</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[felt_difficulty_breathing]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>felt_difficulty_breathing</remote-alias>
-              <ordinal>6</ordinal>
-              <family>Custom SQL Query</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>felt_itching</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[felt_itching]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>felt_itching</remote-alias>
-              <ordinal>7</ordinal>
-              <family>Custom SQL Query</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>felt_swellingfelt_redness</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[felt_swellingfelt_redness]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>felt_swellingfelt_redness</remote-alias>
-              <ordinal>8</ordinal>
-              <family>Custom SQL Query</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>felt_sneezing</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[felt_sneezing]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>felt_sneezing</remote-alias>
-              <ordinal>9</ordinal>
-              <family>Custom SQL Query</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>felt_runny_nose</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[felt_runny_nose]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>felt_runny_nose</remote-alias>
-              <ordinal>10</ordinal>
-              <family>Custom SQL Query</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>felt_cough</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[felt_cough]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>felt_cough</remote-alias>
-              <ordinal>11</ordinal>
-              <family>Custom SQL Query</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>felt_fatigue</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[felt_fatigue]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>felt_fatigue</remote-alias>
-              <ordinal>12</ordinal>
-              <family>Custom SQL Query</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>felt_headache</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[felt_headache]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>felt_headache</remote-alias>
-              <ordinal>13</ordinal>
-              <family>Custom SQL Query</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>felt_nausea_and_vomiting</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[felt_nausea_and_vomiting]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>felt_nausea_and_vomiting</remote-alias>
-              <ordinal>14</ordinal>
-              <family>Custom SQL Query</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>side_effect_duration</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[side_effect_duration]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>side_effect_duration</remote-alias>
-              <ordinal>15</ordinal>
-              <family>Custom SQL Query</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>5</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='3' name='LROOT_S1' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
               <remote-name>applied_liniment</remote-name>
               <remote-type>129</remote-type>
               <local-name>[applied_liniment]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>applied_liniment</remote-alias>
-              <ordinal>16</ordinal>
+              <ordinal>6</ordinal>
               <family>Custom SQL Query</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -898,7 +1581,7 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <local-name>[stayed_away_from_allergens]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>stayed_away_from_allergens</remote-alias>
-              <ordinal>17</ordinal>
+              <ordinal>7</ordinal>
               <family>Custom SQL Query</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -913,11 +1596,26 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <local-name>[applied_other_interventions]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>applied_other_interventions</remote-alias>
-              <ordinal>18</ordinal>
+              <ordinal>8</ordinal>
               <family>Custom SQL Query</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
               <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>child_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[child_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>child_id</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
               <contains-null>true</contains-null>
               <collation flag='3' name='LROOT_S1' />
               <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
@@ -928,7 +1626,7 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <local-name>[age]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>age</remote-alias>
-              <ordinal>19</ordinal>
+              <ordinal>10</ordinal>
               <family>Custom SQL Query</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -942,7 +1640,7 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <local-name>[sex]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>sex</remote-alias>
-              <ordinal>20</ordinal>
+              <ordinal>11</ordinal>
               <family>Custom SQL Query</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -954,7 +1652,7 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
           </metadata-records>
         </connection>
       </extract>
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.629464' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.370536' show-aliased-fields='true' show-hidden-fields='true' show-structure='true' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.737705' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.262295' show-aliased-fields='true' show-hidden-fields='true' show-structure='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[:Measure Names]' type='palette'>
@@ -1001,14 +1699,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858427232264:qk]&quot;</bucket>
             </map>
           </encoding>
-          <encoding attr='color' field='[none:sex:nk]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>&quot;M&quot;</bucket>
-            </map>
-            <map to='#ff9da7'>
-              <bucket>&quot;F&quot;</bucket>
-            </map>
-          </encoding>
           <encoding attr='color' field='[none:age:ok]' palette='tableau20_10_0' type='palette'>
             <map to='#4e79a7'>
               <bucket>6</bucket>
@@ -1026,21 +1716,29 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <bucket>9</bucket>
             </map>
           </encoding>
+          <encoding attr='color' field='[none:sex:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;M&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;F&quot;</bucket>
+            </map>
+          </encoding>
         </style-rule>
       </style>
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
       </semantic-values>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
-          <calculation class='tableau' formula='&quot;By Age&quot;' />
+        <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+          <calculation class='tableau' formula='&quot;Overview&quot;' />
         </column>
       </datasource-dependencies>
       <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
         <objects>
           <object caption='Custom SQL Query' id='_EC89F11895ED4BCFA1480778164C0944'>
             <properties context=''>
-              <relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT a.*, c.age, c.sex&#13;
+              <relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT a.*, c.child_id, c.age, c.sex&#13;
 FROM allergy AS a&#13;
 JOIN session s ON a.allergy_id = s.allergy_id&#13;
 JOIN child c ON s.child_id = c.child_id</relation>
@@ -1062,8 +1760,8 @@ JOIN child c ON s.child_id = c.child_id</relation>
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
-              <calculation class='tableau' formula='&quot;By Age&quot;' />
+            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+              <calculation class='tableau' formula='&quot;Overview&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.0f8t4060sgfuso1919sgh0uiec7a'>
@@ -1197,8 +1895,8 @@ JOIN child c ON s.child_id = c.child_id</relation>
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
-              <calculation class='tableau' formula='&quot;By Age&quot;' />
+            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+              <calculation class='tableau' formula='&quot;Overview&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.0f8t4060sgfuso1919sgh0uiec7a'>
@@ -1350,8 +2048,8 @@ JOIN child c ON s.child_id = c.child_id</relation>
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
-              <calculation class='tableau' formula='&quot;By Age&quot;' />
+            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+              <calculation class='tableau' formula='&quot;Overview&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.0f8t4060sgfuso1919sgh0uiec7a'>
@@ -1498,6 +2196,71 @@ JOIN child c ON s.child_id = c.child_id</relation>
       </table>
       <simple-id uuid='{D4AF475D-1CEC-4157-9417-EFEF59535788}' />
     </worksheet>
+    <worksheet name='Total'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='session+ (dost_chatbot_db) (2)' name='federated.0f8t4060sgfuso1919sgh0uiec7a (copy)' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0f8t4060sgfuso1919sgh0uiec7a (copy)'>
+            <column caption='Num of Children' datatype='integer' name='[Calculation_424464333067116544]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD(child_id)' />
+            </column>
+            <column datatype='string' name='[child_id]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_424464333067116544]' derivation='User' name='[usr:Calculation_424464333067116544:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' value='19' />
+            <format attr='font-weight' value='bold' />
+            <format attr='vertical-align' data-class='subtotal' scope='rows' value='bottom' />
+            <format attr='text-align' value='left' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='vertical-align' scope='rows' value='bottom' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_424464333067116544:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Total Num. Children:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_424464333067116544:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run bold='false'><![CDATA[These data are based on the conversations of <]]></run>
+                <run bold='false'>[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_424464333067116544:qk]</run>
+                <run bold='false'>&gt; students with our chatbot.</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <tooltip-style tooltip-mode='none' />
+      </table>
+      <simple-id uuid='{63A0CB2A-FA1E-4BB7-83D9-2C8FBDD5FBE0}' />
+    </worksheet>
   </worksheets>
   <dashboards>
     <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard - Remedies'>
@@ -1507,8 +2270,8 @@ JOIN child c ON s.child_id = c.child_id</relation>
         <datasource name='Parameters' />
       </datasources>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;By Age&quot;'>
-          <calculation class='tableau' formula='&quot;By Age&quot;' />
+        <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+          <calculation class='tableau' formula='&quot;Overview&quot;' />
           <members>
             <member value='&quot;Overview&quot;' />
             <member value='&quot;By Sex&quot;' />
@@ -1520,7 +2283,16 @@ JOIN child c ON s.child_id = c.child_id</relation>
         <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
           <zone h='97298' id='5' param='horz' type-v2='layout-flow' w='82977' x='693' y='1351'>
             <zone h='97298' id='1' param='vert' type-v2='layout-flow' w='82977' x='693' y='1351'>
-              <zone h='0' id='3' name='Remedies' show-title='false' w='82977' x='693' y='1351'>
+              <zone h='97295' id='3' name='Remedies' show-title='false' w='82977' x='693' y='1351'>
+                <layout-cache cell-count-h='4' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='0' id='8' name='Remedies - Sex' show-title='false' w='82977' x='693' y='98646'>
                 <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -1529,17 +2301,8 @@ JOIN child c ON s.child_id = c.child_id</relation>
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='0' id='8' name='Remedies - Sex' show-title='false' w='82977' x='693' y='1351'>
+              <zone h='0' id='10' name='Remedies - Age' show-title='false' w='82977' x='693' y='98646'>
                 <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='97295' id='10' name='Remedies - Age' show-title='false' w='82977' x='693' y='1351'>
-                <layout-cache cell-count-h='7' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1549,7 +2312,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
               </zone>
             </zone>
           </zone>
-          <zone fixed-size='160' h='97298' id='4' is-fixed='true' param='vert' type-v2='layout-flow' w='15637' x='83670' y='1351'>
+          <zone fixed-size='160' h='80237' id='4' is-fixed='true' param='vert' type-v2='layout-flow' w='15637' x='83670' y='1351'>
             <zone h='8783' id='7' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15637' x='83670' y='1351'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
@@ -1558,7 +2321,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
-            <zone h='1520' id='6' name='Remedies' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15637' x='83670' y='10134'>
+            <zone h='14865' id='6' name='Remedies' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15637' x='83670' y='10134'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -1566,7 +2329,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
-            <zone h='1520' id='9' name='Remedies - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15637' x='83670' y='11654'>
+            <zone h='1520' id='9' name='Remedies - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15637' x='83670' y='24999'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -1574,7 +2337,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
-            <zone h='14865' id='11' name='Remedies - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15637' x='83670' y='13174'>
+            <zone h='1520' id='11' name='Remedies - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15637' x='83670' y='26519'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -1582,6 +2345,14 @@ JOIN child c ON s.child_id = c.child_id</relation>
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
+          </zone>
+          <zone h='17061' id='62' name='Total' show-title='false' w='15637' x='83670' y='81588'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
           </zone>
           <zone-style>
             <format attr='border-color' value='#000000' />
@@ -1593,12 +2364,12 @@ JOIN child c ON s.child_id = c.child_id</relation>
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='1150' minheight='1150' sizing-mode='vscroll' />
+          <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='61' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='97298' id='60' param='vert' type-v2='layout-flow' w='98614' x='693' y='1351'>
-                <zone fixed-size='280' h='0' id='3' is-fixed='true' name='Remedies' show-title='false' w='82977' x='693' y='1351'>
-                  <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
+            <zone h='100000' id='66' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97298' id='65' param='vert' type-v2='layout-flow' w='98614' x='693' y='1351'>
+                <zone fixed-size='280' h='97295' id='3' is-fixed='true' name='Remedies' show-title='false' w='82977' x='693' y='1351'>
+                  <layout-cache cell-count-h='4' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1607,45 +2378,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='1520' id='6' name='Remedies' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15637' x='83670' y='10134'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='0' id='8' is-fixed='true' name='Remedies - Sex' show-title='false' w='82977' x='693' y='1351'>
-                  <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone h='1520' id='9' name='Remedies - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15637' x='83670' y='11654'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='97295' id='10' is-fixed='true' name='Remedies - Age' show-title='false' w='82977' x='693' y='1351'>
-                  <layout-cache cell-count-h='7' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone h='14865' id='11' name='Remedies - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15637' x='83670' y='13174'>
+                <zone h='14865' id='6' name='Remedies' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15637' x='83670' y='10134'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1655,6 +2388,53 @@ JOIN child c ON s.child_id = c.child_id</relation>
                   </zone-style>
                 </zone>
                 <zone h='8783' id='7' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15637' x='83670' y='1351'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='128' h='17061' id='62' is-fixed='true' name='Total' show-title='false' w='15637' x='83670' y='81588'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='0' id='8' is-fixed='true' name='Remedies - Sex' show-title='false' w='82977' x='693' y='98646'>
+                  <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='1520' id='9' name='Remedies - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15637' x='83670' y='24999'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='0' id='10' is-fixed='true' name='Remedies - Age' show-title='false' w='82977' x='693' y='98646'>
+                  <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='1520' id='11' name='Remedies - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15637' x='83670' y='26519'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1677,7 +2457,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
       <simple-id uuid='{6DD58197-02D4-41B1-822F-74BB1E579276}' />
     </dashboard>
   </dashboards>
-  <windows source-height='30'>
+  <windows source-height='51'>
     <window class='worksheet' name='Remedies'>
       <cards>
         <edge name='left'>
@@ -1755,7 +2535,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
       </viewpoint>
       <simple-id uuid='{82908769-CB1B-46E8-9C0A-8F45173BAA7F}' />
     </window>
-    <window class='worksheet' maximized='true' name='Remedies - Age'>
+    <window class='worksheet' name='Remedies - Age'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1793,7 +2573,50 @@ JOIN child c ON s.child_id = c.child_id</relation>
       </viewpoint>
       <simple-id uuid='{65B5BE71-5CC0-4E5F-A736-87D3AD4D108C}' />
     </window>
-    <window class='dashboard' name='Dashboard - Remedies'>
+    <window class='worksheet' name='Total'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_424464333067116544:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>30</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+      </viewpoint>
+      <simple-id uuid='{5E509F53-895F-4B6A-A783-D435DE072F2E}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard - Remedies'>
       <viewpoints>
         <viewpoint name='Remedies'>
           <zoom type='entire-view' />
@@ -1814,314 +2637,94 @@ JOIN child c ON s.child_id = c.child_id</relation>
         <viewpoint name='Remedies - Sex'>
           <zoom type='entire-view' />
         </viewpoint>
+        <viewpoint name='Total'>
+          <zoom type='entire-view' />
+        </viewpoint>
       </viewpoints>
-      <active id='4' />
+      <active id='2' />
       <simple-id uuid='{32B150BF-5192-4119-B33B-FBF4A7E38076}' />
     </window>
   </windows>
   <thumbnails>
     <thumbnail height='192' name='Dashboard - Remedies' width='192'>
       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
-      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
-    </thumbnail>
-    <thumbnail height='192' name='Remedies' width='192'>
-      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
-      YII=
+      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
     </thumbnail>
     <thumbnail height='192' name='Remedies - Age' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
@@ -2333,210 +2936,42 @@ JOIN child c ON s.child_id = c.child_id</relation>
       5DUjAIa8ZgTAkNeMABjymhEAQ14zAmDIa0YADHnNCIAhr/3/GaRnuBMszEUAAAAASUVORK5C
       YII=
     </thumbnail>
-    <thumbnail height='192' name='Remedies - Sex' width='192'>
-      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
+    <thumbnail height='23' name='Total' width='192'>
+      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
     </thumbnail>
   </thumbnails>
 </workbook>
