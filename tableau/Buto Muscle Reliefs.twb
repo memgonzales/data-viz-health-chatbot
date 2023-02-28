@@ -1,0 +1,2027 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20224.23.0209.1653                               -->
+<workbook original-version='18.1' source-build='2022.4.1 (20224.23.0209.1653)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='Allergy_16770827471540' path='/workbooks' revision='1.6' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+        <calculation class='tableau' formula='&quot;Overview&quot;' />
+        <members>
+          <member value='&quot;Overview&quot;' />
+          <member value='&quot;By Sex&quot;' />
+          <member value='&quot;By Age&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='session+ (dost_chatbot_db)' inline='true' name='federated.0f8t4060sgfuso1919sgh0uiec7a' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='mysql.0g8axqf0lmp9h418oa56o03py4s0'>
+            <connection class='mysql' dbname='dost_chatbot_db' odbc-native-protocol='' one-time-sql='' port='3310' server='localhost' source-charset='' username='root' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT b.*, c.age, c.sex&#13;
+FROM buto_muscle AS b&#13;
+JOIN session s ON b.buto_muscle_id = s.buto_muscle_id&#13;
+JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT b.*, c.age, c.sex&#13;
+FROM buto_muscle AS b&#13;
+JOIN session s ON b.buto_muscle_id = s.buto_muscle_id&#13;
+JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>buto_muscle_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[buto_muscle_id]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>buto_muscle_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>has_body_pain</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[has_body_pain]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>has_body_pain</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>body_pain_intensity</remote-name>
+            <remote-type>16</remote-type>
+            <local-name>[body_pain_intensity]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>body_pain_intensity</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_STINYINT&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_body_pain_first_experienced</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[time_body_pain_first_experienced]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>time_body_pain_first_experienced</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_last_felt_body_pain</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[time_last_felt_body_pain]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>time_last_felt_body_pain</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>body_pain_duration</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[body_pain_duration]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>body_pain_duration</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_body_pain_recurring</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_body_pain_recurring]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_body_pain_recurring</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>body_pain_causes</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[body_pain_causes]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>body_pain_causes</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>did_relief_rest</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[did_relief_rest]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>did_relief_rest</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>did_relief_sleep</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[did_relief_sleep]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>did_relief_sleep</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>did_relief_band_aid</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[did_relief_band_aid]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>did_relief_band_aid</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>takes_body_pain_medication</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[takes_body_pain_medication]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>takes_body_pain_medication</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>times_taken_body_pain_medication</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[times_taken_body_pain_medication]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>times_taken_body_pain_medication</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>body_pain_medication_type</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[body_pain_medication_type]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>body_pain_medication_type</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_body_pain_relieved</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_body_pain_relieved]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_body_pain_relieved</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>16</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_STINYINT&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sex</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[sex]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>sex</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>1</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009507840:qk]&quot;' value='😌 Rest' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009667585:qk]&quot;' value='💤 Sleep' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009815042:qk]&quot;' value='🩹 Band Aid' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102010175491:qk]&quot;' value='😧 No Relief' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]&quot;' value='🥛 Dairy' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]&quot;' value='💊 Drugs' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]&quot;' value='🥚 Eggs' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]&quot;' value='🥜 Nuts' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]&quot;' value='🦀 Seafood' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;' value='💡 Others' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]&quot;' value='😊 No Allergies' />
+        </aliases>
+      </column>
+      <column caption='Did Relief Rest' datatype='integer' name='[Calculation_1703768102009507840]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [did_relief_rest] = &apos;Yes&apos; THEN [did_relief_rest] END)' />
+      </column>
+      <column caption='Did Relief Sleep' datatype='integer' name='[Calculation_1703768102009667585]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [did_relief_sleep] = &apos;Yes&apos; THEN [did_relief_sleep] END)' />
+      </column>
+      <column caption='Did Relief Band Aid' datatype='integer' name='[Calculation_1703768102009815042]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [did_relief_band_aid] = &apos;Yes&apos; THEN [did_relief_band_aid] END)' />
+      </column>
+      <column caption='Did No Relief' datatype='integer' name='[Calculation_1703768102010175491]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [did_relief_rest] = &apos;No&apos; AND&#13;&#10;[did_relief_sleep] = &apos;No&apos; AND&#13;&#10;[did_relief_band_aid] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+      </column>
+      <column caption='Allergic to Dairy' datatype='integer' name='[Calculation_92323858373324800]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;Yes&apos; THEN [is_allergic_to_dairy] END)' />
+      </column>
+      <column caption='Allergic to Drugs' datatype='integer' name='[Calculation_92323858373599233]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_drugs] = &apos;Yes&apos; THEN [is_allergic_to_drugs] END)' />
+      </column>
+      <column caption='Allergic to Eggs' datatype='integer' name='[Calculation_92323858421100546]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_eggs] = &apos;Yes&apos; THEN [is_allergic_to_eggs] END)' />
+      </column>
+      <column caption='Allergic to Nuts' datatype='integer' name='[Calculation_92323858421231619]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_nuts] = &apos;Yes&apos; THEN [is_allergic_to_nuts] END)' />
+      </column>
+      <column caption='Allergic to Seafood' datatype='integer' name='[Calculation_92323858422657029]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_seafood] = &apos;Yes&apos; THEN [is_allergic_to_seafood] END)' />
+      </column>
+      <column caption='Allergic to Others' datatype='integer' name='[Calculation_92323858422738950]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_others] = &apos;Yes&apos; THEN [is_allergic_to_others] END)' />
+      </column>
+      <column caption='Allergic to None' datatype='integer' name='[Calculation_92323858447249420]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_drugs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_eggs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_nuts] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_others] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_seafood] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+      </column>
+      <column caption='Chosen Chart' datatype='string' name='[Calculation_92323858450083853]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Custom SQL Query' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[_EC89F11895ED4BCFA1480778164C0944]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[age]' role='measure' type='ordinal'>
+        <aliases>
+          <alias key='6' value='6 years old' />
+          <alias key='7' value='7 years old' />
+          <alias key='8' value='8 years old' />
+          <alias key='9' value='9 years old' />
+        </aliases>
+      </column>
+      <column datatype='string' hidden='true' name='[allergic_to_animal_fur]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[allergy_id]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[applied_liniment]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[applied_other_interventions]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[are_symptoms_relieved]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_cough]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_difficulty_breathing]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_fatigue]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_headache]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_itching]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_nausea_and_vomiting]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_runny_nose]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_sneezing]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_swellingfelt_redness]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[has_allergy]' role='dimension' type='nominal' />
+      <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
+      <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
+      <column datatype='string' name='[sex]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;F&quot;' value='Female' />
+          <alias key='&quot;M&quot;' value='Male' />
+        </aliases>
+      </column>
+      <column datatype='string' hidden='true' name='[side_effect_duration]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[stayed_away_from_allergens]' role='dimension' type='nominal' />
+      <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[sex]' derivation='None' name='[none:sex:nk]' pivot='key' type='nominal' />
+      <column-instance column='[age]' derivation='Sum' name='[sum:age:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1703768102009507840]' derivation='User' name='[usr:Calculation_1703768102009507840:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1703768102009667585]' derivation='User' name='[usr:Calculation_1703768102009667585:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1703768102009815042]' derivation='User' name='[usr:Calculation_1703768102009815042:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1703768102010175491]' derivation='User' name='[usr:Calculation_1703768102010175491:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858373324800]' derivation='User' name='[usr:Calculation_92323858373324800:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858373599233]' derivation='User' name='[usr:Calculation_92323858373599233:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858421100546]' derivation='User' name='[usr:Calculation_92323858421100546:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858421231619]' derivation='User' name='[usr:Calculation_92323858421231619:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858422657029]' derivation='User' name='[usr:Calculation_92323858422657029:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858422738950]' derivation='User' name='[usr:Calculation_92323858422738950:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_GB' class='hyper' dbname='C:/Users/hylen/Documents/My Tableau Repository/Datasources/session+ (dost_chatbot_db).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='02/27/2023 11:36:36 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='session+ (dost_chatbot_db)' increment-value='%null%' refresh-type='create' rows-inserted='30' timestamp-start='2023-02-27 23:36:35.615' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>buto_muscle_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[buto_muscle_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>buto_muscle_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>has_body_pain</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[has_body_pain]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>has_body_pain</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>body_pain_intensity</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[body_pain_intensity]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>body_pain_intensity</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>time_body_pain_first_experienced</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[time_body_pain_first_experienced]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>time_body_pain_first_experienced</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>time_last_felt_body_pain</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[time_last_felt_body_pain]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>time_last_felt_body_pain</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>body_pain_duration</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[body_pain_duration]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>body_pain_duration</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_body_pain_recurring</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_body_pain_recurring]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_body_pain_recurring</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>body_pain_causes</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[body_pain_causes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>body_pain_causes</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>did_relief_rest</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[did_relief_rest]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>did_relief_rest</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>did_relief_sleep</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[did_relief_sleep]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>did_relief_sleep</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>did_relief_band_aid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[did_relief_band_aid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>did_relief_band_aid</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>takes_body_pain_medication</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[takes_body_pain_medication]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>takes_body_pain_medication</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>times_taken_body_pain_medication</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[times_taken_body_pain_medication]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>times_taken_body_pain_medication</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>body_pain_medication_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[body_pain_medication_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>body_pain_medication_type</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_body_pain_relieved</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_body_pain_relieved]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_body_pain_relieved</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>age</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sex</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[sex]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sex</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.810268' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.189732' show-aliased-fields='true' show-hidden-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:age:ok]' palette='tableau20_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>232</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>9</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:sex:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;M&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;F&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858426740743:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421100546:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858421231619:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422657029:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009507840:qk]&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009667585:qk]&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009815042:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[sum:age:qk]&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102010175491:qk]&quot;</bucket>
+            </map>
+            <map to='#f6c760'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858427232264:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+          <calculation class='tableau' formula='&quot;Overview&quot;' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Custom SQL Query' id='_EC89F11895ED4BCFA1480778164C0944'>
+            <properties context=''>
+              <relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT b.*, c.age, c.sex&#13;
+FROM buto_muscle AS b&#13;
+JOIN session s ON b.buto_muscle_id = s.buto_muscle_id&#13;
+JOIN child c ON s.child_id = c.child_id</relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Relief'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='session+ (dost_chatbot_db)' name='federated.0f8t4060sgfuso1919sgh0uiec7a' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+              <calculation class='tableau' formula='&quot;Overview&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0f8t4060sgfuso1919sgh0uiec7a'>
+            <column caption='Did Relief Rest' datatype='integer' name='[Calculation_1703768102009507840]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_rest] = &apos;Yes&apos; THEN [did_relief_rest] END)' />
+            </column>
+            <column caption='Did Relief Sleep' datatype='integer' name='[Calculation_1703768102009667585]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_sleep] = &apos;Yes&apos; THEN [did_relief_sleep] END)' />
+            </column>
+            <column caption='Did Relief Band Aid' datatype='integer' name='[Calculation_1703768102009815042]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_band_aid] = &apos;Yes&apos; THEN [did_relief_band_aid] END)' />
+            </column>
+            <column caption='Did No Relief' datatype='integer' name='[Calculation_1703768102010175491]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_rest] = &apos;No&apos; AND&#13;&#10;[did_relief_sleep] = &apos;No&apos; AND&#13;&#10;[did_relief_band_aid] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+            </column>
+            <column caption='Allergic to None' datatype='integer' name='[Calculation_92323858447249420]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_drugs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_eggs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_nuts] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_others] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_seafood] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+            </column>
+            <column caption='Chosen Chart' datatype='string' name='[Calculation_92323858450083853]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+            </column>
+            <column datatype='string' name='[did_relief_band_aid]' role='dimension' type='nominal' />
+            <column datatype='string' name='[did_relief_rest]' role='dimension' type='nominal' />
+            <column datatype='string' name='[did_relief_sleep]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_dairy]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_drugs]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_eggs]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_others]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_92323858450083853]' derivation='None' name='[none:Calculation_92323858450083853:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1703768102009507840]' derivation='User' name='[usr:Calculation_1703768102009507840:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1703768102009667585]' derivation='User' name='[usr:Calculation_1703768102009667585:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1703768102009815042]' derivation='User' name='[usr:Calculation_1703768102009815042:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1703768102010175491]' derivation='User' name='[usr:Calculation_1703768102010175491:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009507840:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009667585:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009815042:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102010175491:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009507840:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009667585:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009815042:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]'>
+            <groupfilter function='member' level='[none:Calculation_92323858450083853:nk]' member='&quot;Overview&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</column>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]' scope='cols' value='Number of Children' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='44' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009507840:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009667585:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009815042:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102010175491:qk]' value='N' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='112' />
+            <format attr='background-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='data-highlighter-title'>
+            <format attr='title' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='Allergens' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>Relief:&#9;  </run>
+                <run><![CDATA[<[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]>
+]]></run>
+                <run bold='true'>Num. Children:</run>
+                <run><![CDATA[	  <[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.2413811683654785' />
+                <format attr='mark-color' value='#72b966' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</rows>
+        <cols>[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{C90475A1-3551-40B1-BC15-2BF5704555EE}' />
+    </worksheet>
+    <worksheet name='Relief - Age'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='session+ (dost_chatbot_db)' name='federated.0f8t4060sgfuso1919sgh0uiec7a' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+              <calculation class='tableau' formula='&quot;Overview&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0f8t4060sgfuso1919sgh0uiec7a'>
+            <column caption='Did Relief Rest' datatype='integer' name='[Calculation_1703768102009507840]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_rest] = &apos;Yes&apos; THEN [did_relief_rest] END)' />
+            </column>
+            <column caption='Did Relief Sleep' datatype='integer' name='[Calculation_1703768102009667585]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_sleep] = &apos;Yes&apos; THEN [did_relief_sleep] END)' />
+            </column>
+            <column caption='Did Relief Band Aid' datatype='integer' name='[Calculation_1703768102009815042]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_band_aid] = &apos;Yes&apos; THEN [did_relief_band_aid] END)' />
+            </column>
+            <column caption='Did No Relief' datatype='integer' name='[Calculation_1703768102010175491]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_rest] = &apos;No&apos; AND&#13;&#10;[did_relief_sleep] = &apos;No&apos; AND&#13;&#10;[did_relief_band_aid] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+            </column>
+            <column caption='Allergic to Others' datatype='integer' name='[Calculation_92323858422738950]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_others] = &apos;Yes&apos; THEN [is_allergic_to_others] END)' />
+            </column>
+            <column caption='Allergic to None' datatype='integer' name='[Calculation_92323858447249420]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_drugs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_eggs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_nuts] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_others] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_seafood] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+            </column>
+            <column caption='Chosen Chart' datatype='string' name='[Calculation_92323858450083853]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+            </column>
+            <column datatype='integer' name='[age]' role='measure' type='ordinal'>
+              <aliases>
+                <alias key='6' value='6 years old' />
+                <alias key='7' value='7 years old' />
+                <alias key='8' value='8 years old' />
+                <alias key='9' value='9 years old' />
+              </aliases>
+            </column>
+            <column datatype='string' name='[did_relief_band_aid]' role='dimension' type='nominal' />
+            <column datatype='string' name='[did_relief_rest]' role='dimension' type='nominal' />
+            <column datatype='string' name='[did_relief_sleep]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_dairy]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_drugs]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_eggs]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_others]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_92323858450083853]' derivation='None' name='[none:Calculation_92323858450083853:nk]' pivot='key' type='nominal' />
+            <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1703768102009507840]' derivation='User' name='[usr:Calculation_1703768102009507840:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1703768102009667585]' derivation='User' name='[usr:Calculation_1703768102009667585:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1703768102009815042]' derivation='User' name='[usr:Calculation_1703768102009815042:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1703768102010175491]' derivation='User' name='[usr:Calculation_1703768102010175491:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858422738950]' derivation='User' name='[usr:Calculation_92323858422738950:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009507840:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009667585:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009815042:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102010175491:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009507840:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009667585:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009815042:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]'>
+            <groupfilter function='member' level='[none:Calculation_92323858450083853:nk]' member='&quot;By Age&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate' />
+          </filter>
+          <alphabetic-sort column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' direction='ASC' />
+          <slices>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</column>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]' scope='cols' value='Number of Children' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='44' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009507840:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009667585:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009815042:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102010175491:qk]' value='N' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='112' />
+            <format attr='background-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='data-highlighter-title'>
+            <format attr='title' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='Allergens' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>Relief:&#9;  </run>
+                <run><![CDATA[<[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]>
+]]></run>
+                <run bold='true'>Age:&#9;  </run>
+                <run><![CDATA[ <[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]> 
+]]></run>
+                <run bold='true'>Num. Children:</run>
+                <run><![CDATA[	   <[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.2413811683654785' />
+                <format attr='mark-color' value='#72b966' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</rows>
+        <cols>[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{D7436676-AAB7-4413-812B-14B76720A9C7}' />
+    </worksheet>
+    <worksheet name='Relief - Sex'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='session+ (dost_chatbot_db)' name='federated.0f8t4060sgfuso1919sgh0uiec7a' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+              <calculation class='tableau' formula='&quot;Overview&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0f8t4060sgfuso1919sgh0uiec7a'>
+            <column caption='Did Relief Rest' datatype='integer' name='[Calculation_1703768102009507840]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_rest] = &apos;Yes&apos; THEN [did_relief_rest] END)' />
+            </column>
+            <column caption='Did Relief Sleep' datatype='integer' name='[Calculation_1703768102009667585]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_sleep] = &apos;Yes&apos; THEN [did_relief_sleep] END)' />
+            </column>
+            <column caption='Did Relief Band Aid' datatype='integer' name='[Calculation_1703768102009815042]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_band_aid] = &apos;Yes&apos; THEN [did_relief_band_aid] END)' />
+            </column>
+            <column caption='Did No Relief' datatype='integer' name='[Calculation_1703768102010175491]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [did_relief_rest] = &apos;No&apos; AND&#13;&#10;[did_relief_sleep] = &apos;No&apos; AND&#13;&#10;[did_relief_band_aid] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+            </column>
+            <column caption='Allergic to Others' datatype='integer' name='[Calculation_92323858422738950]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_others] = &apos;Yes&apos; THEN [is_allergic_to_others] END)' />
+            </column>
+            <column caption='Allergic to None' datatype='integer' name='[Calculation_92323858447249420]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_drugs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_eggs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_nuts] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_others] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_seafood] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+            </column>
+            <column caption='Chosen Chart' datatype='string' name='[Calculation_92323858450083853]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+            </column>
+            <column datatype='string' name='[did_relief_band_aid]' role='dimension' type='nominal' />
+            <column datatype='string' name='[did_relief_rest]' role='dimension' type='nominal' />
+            <column datatype='string' name='[did_relief_sleep]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_dairy]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_drugs]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_eggs]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
+            <column datatype='string' name='[is_allergic_to_others]' role='dimension' type='nominal' />
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_92323858450083853]' derivation='None' name='[none:Calculation_92323858450083853:nk]' pivot='key' type='nominal' />
+            <column-instance column='[sex]' derivation='None' name='[none:sex:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[sex]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;F&quot;' value='Female' />
+                <alias key='&quot;M&quot;' value='Male' />
+              </aliases>
+            </column>
+            <column-instance column='[Calculation_1703768102009507840]' derivation='User' name='[usr:Calculation_1703768102009507840:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1703768102009667585]' derivation='User' name='[usr:Calculation_1703768102009667585:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1703768102009815042]' derivation='User' name='[usr:Calculation_1703768102009815042:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1703768102010175491]' derivation='User' name='[usr:Calculation_1703768102010175491:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858422738950]' derivation='User' name='[usr:Calculation_92323858422738950:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009507840:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009667585:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009815042:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102010175491:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009507840:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009667585:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009815042:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]'>
+            <groupfilter function='member' level='[none:Calculation_92323858450083853:nk]' member='&quot;By Sex&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate' />
+          </filter>
+          <alphabetic-sort column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' direction='ASC' />
+          <slices>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</column>
+            <column>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]' scope='cols' value='Number of Children' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='44' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858422738950:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858447249420:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009507840:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009667585:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102009815042:qk]' value='N' />
+            <format attr='text-format' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_1703768102010175491:qk]' value='N' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='112' />
+            <format attr='background-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' value='By Sex' />
+          </style-rule>
+          <style-rule element='data-highlighter-title'>
+            <format attr='title' field='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' value='Allergens' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' />
+              <lod column='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>Relief:&#9;  </run>
+                <run><![CDATA[<[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]>
+]]></run>
+                <run bold='true'>Sex:&#9;  </run>
+                <run><![CDATA[ <[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]>
+]]></run>
+                <run bold='true'>Num. Children:</run>
+                <run><![CDATA[	  <[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.2413811683654785' />
+                <format attr='mark-color' value='#72b966' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</rows>
+        <cols>[federated.0f8t4060sgfuso1919sgh0uiec7a].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{D4AF475D-1CEC-4157-9417-EFEF59535788}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard - Relief'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+          <calculation class='tableau' formula='&quot;Overview&quot;' />
+          <members>
+            <member value='&quot;Overview&quot;' />
+            <member value='&quot;By Sex&quot;' />
+            <member value='&quot;By Age&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97298' id='5' param='horz' type-v2='layout-flow' w='82976' x='693' y='1351'>
+            <zone h='97298' id='1' param='vert' type-v2='layout-flow' w='82976' x='693' y='1351'>
+              <zone h='97295' id='3' name='Relief' show-title='false' w='82976' x='693' y='1351'>
+                <layout-cache cell-count-h='4' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='0' id='8' name='Relief - Sex' show-title='false' w='82976' x='693' y='98646'>
+                <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='0' id='10' name='Relief - Age' show-title='false' w='82976' x='693' y='98646'>
+                <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone fixed-size='160' h='97298' id='4' is-fixed='true' param='vert' type-v2='layout-flow' w='15638' x='83669' y='1351'>
+            <zone h='8783' id='7' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15638' x='83669' y='1351'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='14865' id='6' name='Relief' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15638' x='83669' y='10134'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='1520' id='9' name='Relief - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15638' x='83669' y='24999'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='1520' id='11' name='Relief - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15638' x='83669' y='26519'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1150' minheight='1150' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='61' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97298' id='60' param='vert' type-v2='layout-flow' w='98614' x='693' y='1351'>
+                <zone fixed-size='280' h='97295' id='3' is-fixed='true' name='Relief' show-title='false' w='82976' x='693' y='1351'>
+                  <layout-cache cell-count-h='4' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='14865' id='6' name='Relief' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15638' x='83669' y='10134'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8783' id='7' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15638' x='83669' y='1351'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='0' id='8' is-fixed='true' name='Relief - Sex' show-title='false' w='82976' x='693' y='98646'>
+                  <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='1520' id='9' name='Relief - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15638' x='83669' y='24999'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='0' id='10' is-fixed='true' name='Relief - Age' show-title='false' w='82976' x='693' y='98646'>
+                  <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='1520' id='11' name='Relief - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15638' x='83669' y='26519'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{6DD58197-02D4-41B1-822F-74BB1E579276}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Relief'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{ECE5F4F1-4122-4EED-9A0D-AA297CC8D48B}' />
+    </window>
+    <window class='worksheet' name='Relief - Sex'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{82908769-CB1B-46E8-9C0A-8F45173BAA7F}' />
+    </window>
+    <window class='worksheet' name='Relief - Age'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:Calculation_92323858450083853:nk]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373324800:ok]</field>
+            <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858373599233:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{65B5BE71-5CC0-4E5F-A736-87D3AD4D108C}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard - Relief'>
+      <viewpoints>
+        <viewpoint name='Relief'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Relief - Age'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Relief - Sex'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='7' />
+      <simple-id uuid='{32B150BF-5192-4119-B33B-FBF4A7E38076}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard - Relief' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAALjUlEQVR4nO3dzW8c52HH8e/MvnFXfJVIkSIpkSJlmbFsGLYbWymaOIETp0mDIEEvaVOg
+      DXIJEPQ/6KmHHtqeC7S3pkGLoEUvRR03TuNYkmVZFm1aFiXx/WVJyksu9232ZfZldnowqgaB
+      Xdsghzvm8/vcJGjneVbYL2d25uGM5fu+j4ih7E5PQKSTFIAYLfQB6AhNghT6ADzP6/QU5BgL
+      fQAiQVIAYjQFIEZTAGI0BSBGUwBitGinJ/Bx9t1dil6+09OQYyr0Adwr3GY2d73T05BjSodA
+      YjQFIEZTAGI0BSBGUwBiNAUgRlMAYjQFIEZTAGK0IwmgWCzyyiu/YHNz8yiGE/nEAg9gK73O
+      tZ/+Ib+X+Et2X/seN66+BMDO2gK3br1F1nF/6xU+lUo16GmJAEcQwPzNf+dLF7LQqnPhZIn8
+      4k/xPI+2H2Nm5hy53X3uvD3L4toWd965yerGBtevXmOvUAl6aiLBB2BFkmwXojwowOp+HM9K
+      YVkW9VqRGzfvcnrAZ2k7h+vWiUYilCoNJs5PMtCTDHpqIsGvBn3uy9/j3/7hGm7uNsSG+Nr3
+      /xzbthmbmuH8YwnKTpXLT05DcgC/ZjHYexqrXsCp1hWBBM46ilsjttttdnZ2GBoaIpFIfKrX
+      /nrrZS2HlsAcye8D2LbN+Pj4UQwl8qnoOoAYTQGI0RSAGE0BiNEUgBhNAYjRFIAYTQGI0UJ/
+      Y6zh5CiXBp7q9DTkmDqSpRAH0Wq1iEZD36l8RukQSIymAMRoCkCMpgDEaApAjKYAxGgKQIym
+      AMRoCkCMpgDEaApAjKYAxGgKQIymAMRooV9n/M7+m9wrvtvpacgxFfoAKk2HPff9Tk9Djikd
+      AonRFIAYTQGI0RSAGE0BiNEUgBhNAYjRFIAYTQGI0QINoNlssrGxQTabffh3ftsjn9vHbbRo
+      NBpBDi/ysQJbClGr1Xj9+nW++Y+/4Klumz/64u/w/a89T6TpsJltMDoWJbe7w7mxURrESEV9
+      Sq5HTzJKqVTl5OApIrYV1PREgAADeOf2bb7xk19yenSc+btv8xd3C3zz8wWmz40Tz96nXHEB
+      jxtXXqXWNchgtMpuyWfywgQ9MYtK22Jy5FRQ0xMBAgzg0swMr/zoOzz+yDQ/eXWSW/s1EokE
+      9apDrenRBSS7TjB05gx+apCk59A1EMP2GmQrDc4PnwtqaiIPhe7u0KVSid7e3od/1oOyJUih
+      Owv0mx9+kaCFLgCRo6QAxGgKQIymAMRoCkCMpgDEaApAjKYAxGgKQIwWuqUQv61cd2jR7PQ0
+      5JgKfQB6UrwESYdAYjQFIEZTAGI0BSBGUwBiNAUgRlMAYjQFIEZTAGI0BSBGUwBiNAUgRlMA
+      YrTQL7PM1bM41WKnpyHHVOgDuJuf060RJTA6BBKjKQAxmgIQoykAMZoCEKMpADGaAhCjKQAx
+      mgIQox1qABsbG6wsLxPye22JPHRoAczfnmPtZ3/N/D//Da7rUng/za3ZWdZ39j7iFS7ZrAPA
+      1uId8nWfYvGDNT8Nt0LRqR7W1EQ+0qGsBbo3f4fizf/k0vlxXi+lSCQSFMplWpZFq9lgY+ke
+      ZT9JigpZp87UxDjr60sk+y4wONhN1fepbqZJpWzatRL319KMTz1GX0/qMKYn8pEOvAdYXV4k
+      89LfcyFW5I18nG/96Y+xbRsr0sWlSzPUSnl29/dZWlmBeIrpc6fZy+xz/uJF4hGbei7N+rbD
+      duYBjlNmv1Th0UemiFiH8fZE/n8H3gPkdjPQqPJ6Y5pv/eDHD29k2z/Yx+LCCmfPX6CWf8Dw
+      RA+DfSeIRixOdJ9kPZ1mZHSCtpXiha+cpVap4AMJ22M1vce5yVMHnZrIxzrw3aF93yeTyTA0
+      NEQkEjmseT2kJ8VLkA68B7Asi5GRkcOYi8iR03UAMZoCEKMpADGaAhCjKQAxmgIQoykAMZoC
+      EKOF/sZYQ8kRZvqf6PQ05JjSg7LFaDoEEqMpADGaAhCjKQAxmgIQoykAMZoCEKMpADGaAhCj
+      KQAxmgIQoykAMZoCEKMpADFa6NcZN7O/pl58M9Ax4sO/T6z/mUDHkHAKfQDtZh6vuhboGH7T
+      CXT7El46BBKjKQAxmgIQoykAMZoCEKMpADGaAhCjKQAxmgIQox34SnCpWOTaz/8Oz7nPibEX
+      +NKLf0w0GsV1XRKJBC3PI/Ybd3arlEu0rSjdqRSWBfgeTc8iFv2/FlvNOg0PUl2Jg07vE/N9
+      n6tXr9Ld3c3TTz99ZONKZx1oD+D7Plf+42+Z4Z94cWaJU5m/4ua1lwCYu3GFbKnG2toa5VKB
+      qtsAYHVpgZXFBUpVl3wuR8vNspwusLe3S63i4FSqzL87SyZ3tMsTfN9nZmaGbDZ7pONKZx1o
+      D9But0k0F6nYSVa2G/QP9PJg9w7wbYYnpslsrmLbDZaWarSjNs88+Tj1WpkaJ8jvrDB3Z4GL
+      MxexukbZ39tlbvU+9a4RRgfi9HcnD+ktfnILCwtcvnz5yMeVzjnQHsC2bdo9zwIWL9/IUa7b
+      DE18AYB4IslIXxfNaA++VyMS++BwZnTiEabHh4gmkpwZm+DUQA+JeIREV5LTI2NMnh1j+Mw4
+      A70nDvzmPo1ms8n29jY3b9480nGlsw58d+harcb1X/2MRmGBkxPP8/nffRHbPrzv1pX0v+Jl
+      /+vQtvdhusb/hPjQlwMdQ8LpwF+Ck8kkL/zBnx3CVESOnk6DitEUgBhNAYjRFIAYTQGI0RSA
+      GE0BiNEUgBhNAYjRQv+g7Kabx6YW6Bh2tA8rerRrjyQcQh+AnhQvQdIhkBhNAYjRFIAYTQGI
+      0RSAGO0zcXol5Ceq5DMs9AH4vk+73Q50DM/ziEQiGiMkY7TbbSzLwrKswMcIfQC2bQf+Hw5o
+      jBCN8b8f/MP83fIPY9t2+C+EiQTpM/Al2KeQy1JrtALZutdqkNndo9UO9udAueQQ5IGc7/sU
+      9veous3Axmh7LfZ2d2l6wbwT3/cpOw5tH6pOgVLFDWCMNo7j4PvgFHLhD6Be3CedybK0vEoQ
+      H9FyMY/r7LLxoBTA1j/g1R2uvfYGjcBGgEo2zWa2jNf2Ahtjb3OFbDHP6mYmkO23GlU2Vlao
+      tVyWVtKsLi8d+g+mRq3M+uo6Tb9JPu+EPwC33mR49CzJaDBfiJKpFC1SnB3uCWT7APPv3aEr
+      GaPkBLeozyk4VKt50tu7gY0R60rgFIqBrc2KJU5werAPWi6pgRH6exIc9s4mkerl1EA3ECMe
+      98MfQE9/H1tL8xA/QRAJ7GyukcvnKAT44Zx+9BKjI8Mk48GdcxgcGyPm+SQS8cDGsCwb27Kx
+      7WB+GNUrBZZWN9h8v0yrsEmxZhGLHO5YtdI+q2sbbKbXWF5K60uwmC30ewCRICkAMZoCEKMp
+      AOmItXtzFGotttLbH/4PGmXSmcLHbufO3Bzlegsn94Ar195kJZ3G9338tkfDrbH9/genbLe3
+      tj70Okzol0LI8XR3cZ6uPZe6U8S2I8RoU/fKrGzskYzCyFAvL11f4ItfeI4+22GnbDPUF6PV
+      spieHOOdt95iYHSS/55d5Yefe5xfvnqVr3/j27zyq5+TWVvl4mPTrG8UyTtZnN00r721wItf
+      eQ7Xj4CzB71j2NWMApDOsOK99PgOe40WS/eWSflNKjGHZHSQWLKLd++vc2biIsu3b5HJrDMw
+      8iibOHz169+lsLOImxjmvdtzTD3xDN2JCFgRYvEoETvKhZEYby9s4btRPDfPimdxdrif92Zn
+      ufz8s/zLy+9x4ZE6DbegAKQzps5PMzV+ktLsFr3xKuVGinNnh4nZ3cSSMRKJJOn0FoMzTzA1
+      cZp8M8nJgSn6T8RpRSdpL7/B9MyT2F3dgMXlpy5x5cqbjJ6fpudUN5NxH78VwfJ72X+wTS02
+      yPjUNAOD4zx7aZL44AjJ6JCuA4jZ9CVYjKYAxGgKQIymAMRoCkCMpgDEaP8Do1orImkalSEA
+      AAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Relief' width='192'>
+      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
+      Et0AAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Relief - Age' width='192'>
+      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
+      hDiJ5J20n1wAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Relief - Sex' width='192'>
+      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
+      RK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
