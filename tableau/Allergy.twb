@@ -17,7 +17,7 @@
     <WindowsPersistSimpleIdentifiers />
     <ZoneBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='Allergy_16770827471540' path='/workbooks' revision='1.8' />
+  <repository-location id='Allergy_16770827471540' path='/workbooks' revision='2.0' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -1348,9 +1348,9 @@ JOIN child c ON s.child_id = c.child_id</relation>
         <style>
           <style-rule element='cell'>
             <format attr='height' value='19' />
-            <format attr='text-align' value='center' />
             <format attr='font-weight' value='bold' />
             <format attr='vertical-align' data-class='subtotal' scope='rows' value='bottom' />
+            <format attr='text-align' value='left' />
           </style-rule>
           <style-rule element='label'>
             <format attr='vertical-align' scope='rows' value='bottom' />
@@ -1391,6 +1391,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
         </panes>
         <rows />
         <cols />
+        <tooltip-style tooltip-mode='none' />
       </table>
       <simple-id uuid='{9F7920FD-66C3-4D5C-AC7D-BC7E049A959B}' />
     </worksheet>
@@ -1503,10 +1504,10 @@ JOIN child c ON s.child_id = c.child_id</relation>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='65' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='97298' id='64' param='vert' type-v2='layout-flow' w='98614' x='693' y='1351'>
+            <zone h='100000' id='73' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97298' id='72' param='vert' type-v2='layout-flow' w='98614' x='693' y='1351'>
                 <zone fixed-size='280' h='97295' id='3' is-fixed='true' name='Allergens' show-title='false' w='82977' x='693' y='1351'>
-                  <layout-cache minwidth='212' type-h='cell' type-w='scalable' />
+                  <layout-cache cell-count-h='7' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1731,6 +1732,26 @@ JOIN child c ON s.child_id = c.child_id</relation>
           </strip>
         </edge>
       </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_424464333067116544:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>30</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+      </viewpoint>
       <simple-id uuid='{CCC1C7E5-1594-48E2-A878-9141A8DFDA5B}' />
     </window>
     <window class='dashboard' maximized='true' name='Dashboard - Allergens'>
@@ -1756,9 +1777,27 @@ JOIN child c ON s.child_id = c.child_id</relation>
         </viewpoint>
         <viewpoint name='Total'>
           <zoom type='entire-view' />
+          <selection-collection>
+            <tuple-selection>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields />
+                    <y-fields />
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_424464333067116544:qk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>30</value>
+                </tuple>
+              </tuple-reference>
+            </tuple-selection>
+          </selection-collection>
         </viewpoint>
       </viewpoints>
-      <active id='2' />
+      <active id='50' />
       <simple-id uuid='{32B150BF-5192-4119-B33B-FBF4A7E38076}' />
     </window>
   </windows>
@@ -1965,38 +2004,40 @@ JOIN child c ON s.child_id = c.child_id</relation>
     </thumbnail>
     <thumbnail height='23' name='Total' width='192'>
       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
-      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
+      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
     </thumbnail>
   </thumbnails>
 </workbook>
