@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
-<!-- build 20224.23.0209.1653                               -->
-<workbook original-version='18.1' source-build='2022.4.1 (20224.23.0209.1653)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+<!-- build 20224.22.1117.1841                               -->
+<workbook original-version='18.1' source-build='2022.4.0 (20224.22.1117.1841)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
     <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
@@ -39,6 +39,829 @@
         </members>
       </column>
     </datasource>
+    <datasource caption='session+ (dost_chatbot_db) (2)' inline='true' name='federated.0f8t4060sgfuso1919sgh0uiec7a (copy)' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='mysql.0g8axqf0lmp9h418oa56o03py4s0 (copy)'>
+            <connection class='mysql' dbname='dost_chatbot_db' odbc-native-protocol='' one-time-sql='' port='3310' server='localhost' source-charset='' username='root' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0 (copy)' name='Custom SQL Query' type='text'>SELECT a.*, c.child_id, c.age, c.sex&#13;
+FROM allergy AS a&#13;
+JOIN session s ON a.allergy_id = s.allergy_id&#13;
+JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0 (copy)' name='Custom SQL Query' type='text'>SELECT a.*, c.child_id, c.age, c.sex&#13;
+FROM allergy AS a&#13;
+JOIN session s ON a.allergy_id = s.allergy_id&#13;
+JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>allergy_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[allergy_id]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>allergy_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>has_allergy</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[has_allergy]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>has_allergy</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_nuts</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_nuts]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_nuts</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_dairy</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_dairy]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_dairy</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_eggs</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_eggs]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_eggs</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_seafood</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_seafood]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_seafood</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_drugs</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_drugs]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_drugs</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_allergic_to_others</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[is_allergic_to_others]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>is_allergic_to_others</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>allergic_to_animal_fur</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[allergic_to_animal_fur]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>allergic_to_animal_fur</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_difficulty_breathing</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_difficulty_breathing]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_difficulty_breathing</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_itching</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_itching]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_itching</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_swellingfelt_redness</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_swellingfelt_redness]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_swellingfelt_redness</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_sneezing</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_sneezing]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_sneezing</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_runny_nose</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_runny_nose]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_runny_nose</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_cough</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_cough]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_cough</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_fatigue</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_fatigue]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_fatigue</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_headache</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_headache]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_headache</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>felt_nausea_and_vomiting</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[felt_nausea_and_vomiting]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>felt_nausea_and_vomiting</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>side_effect_duration</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[side_effect_duration]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>side_effect_duration</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>applied_liniment</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[applied_liniment]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>applied_liniment</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stayed_away_from_allergens</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[stayed_away_from_allergens]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>stayed_away_from_allergens</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>applied_other_interventions</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[applied_other_interventions]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>applied_other_interventions</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>are_symptoms_relieved</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[are_symptoms_relieved]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>are_symptoms_relieved</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>child_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[child_id]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>child_id</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>16</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_STINYINT&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sex</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[sex]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>sex</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>1</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858373324800:qk]&quot;' value='🥛 Dairy' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858373599233:qk]&quot;' value='💊 Drugs' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858421100546:qk]&quot;' value='🥚 Eggs' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858421231619:qk]&quot;' value='🥜 Nuts' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858422657029:qk]&quot;' value='🦀 Seafood' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858422738950:qk]&quot;' value='💡 Others' />
+          <alias key='&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858447249420:qk]&quot;' value='😊 No Allergies' />
+        </aliases>
+      </column>
+      <column caption='Num of Children' datatype='integer' name='[Calculation_424464333067116544]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD(child_id)' />
+      </column>
+      <column caption='Allergic to Dairy' datatype='integer' name='[Calculation_92323858373324800]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;Yes&apos; THEN [is_allergic_to_dairy] END)' />
+      </column>
+      <column caption='Allergic to Drugs' datatype='integer' name='[Calculation_92323858373599233]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_drugs] = &apos;Yes&apos; THEN [is_allergic_to_drugs] END)' />
+      </column>
+      <column caption='Allergic to Eggs' datatype='integer' name='[Calculation_92323858421100546]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_eggs] = &apos;Yes&apos; THEN [is_allergic_to_eggs] END)' />
+      </column>
+      <column caption='Allergic to Nuts' datatype='integer' name='[Calculation_92323858421231619]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_nuts] = &apos;Yes&apos; THEN [is_allergic_to_nuts] END)' />
+      </column>
+      <column caption='Allergic to Seafood' datatype='integer' name='[Calculation_92323858422657029]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_seafood] = &apos;Yes&apos; THEN [is_allergic_to_seafood] END)' />
+      </column>
+      <column caption='Allergic to Others' datatype='integer' name='[Calculation_92323858422738950]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_others] = &apos;Yes&apos; THEN [is_allergic_to_others] END)' />
+      </column>
+      <column caption='Allergic to None' datatype='integer' name='[Calculation_92323858447249420]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT(IF [is_allergic_to_dairy] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_drugs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_eggs] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_nuts] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_others] = &apos;No&apos; AND&#13;&#10;[is_allergic_to_seafood] = &apos;No&apos;&#13;&#10;THEN 1 END)' />
+      </column>
+      <column caption='Chosen Chart' datatype='string' name='[Calculation_92323858450083853]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Custom SQL Query' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[_EC89F11895ED4BCFA1480778164C0944]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[age]' role='measure' type='ordinal'>
+        <aliases>
+          <alias key='6' value='6 years old' />
+          <alias key='7' value='7 years old' />
+          <alias key='8' value='8 years old' />
+          <alias key='9' value='9 years old' />
+        </aliases>
+      </column>
+      <column datatype='string' hidden='true' name='[allergic_to_animal_fur]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[allergy_id]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[applied_liniment]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[applied_other_interventions]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[are_symptoms_relieved]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_cough]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_difficulty_breathing]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_fatigue]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_headache]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_itching]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_nausea_and_vomiting]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_runny_nose]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_sneezing]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[felt_swellingfelt_redness]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[has_allergy]' role='dimension' type='nominal' />
+      <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
+      <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
+      <column datatype='string' name='[sex]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;F&quot;' value='Female' />
+          <alias key='&quot;M&quot;' value='Male' />
+        </aliases>
+      </column>
+      <column datatype='string' hidden='true' name='[side_effect_duration]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[stayed_away_from_allergens]' role='dimension' type='nominal' />
+      <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[sex]' derivation='None' name='[none:sex:nk]' pivot='key' type='nominal' />
+      <column-instance column='[age]' derivation='Sum' name='[sum:age:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858373324800]' derivation='User' name='[usr:Calculation_92323858373324800:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858373599233]' derivation='User' name='[usr:Calculation_92323858373599233:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858421100546]' derivation='User' name='[usr:Calculation_92323858421100546:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858421231619]' derivation='User' name='[usr:Calculation_92323858421231619:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858422657029]' derivation='User' name='[usr:Calculation_92323858422657029:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858422738950]' derivation='User' name='[usr:Calculation_92323858422738950:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_GB' class='hyper' dbname='C:/Users/Edward/Documents/My Tableau Repository/Datasources/session+ (dost_chatbot_db) copy 6.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='02/28/2023 01:43:51 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='session+ (dost_chatbot_db)' increment-value='%null%' refresh-type='create' rows-inserted='30' timestamp-start='2023-02-28 13:43:50.618' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_nuts</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_nuts]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_nuts</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_dairy</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_dairy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_dairy</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_eggs</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_eggs]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_eggs</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_seafood</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_seafood]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_seafood</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_drugs</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_drugs]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_drugs</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_allergic_to_others</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[is_allergic_to_others]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_allergic_to_others</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>child_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[child_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>child_id</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>age</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sex</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[sex]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sex</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.946136' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.0538642' show-aliased-fields='true' show-hidden-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858426740743:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858373324800:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858373599233:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858421100546:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858421231619:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858422657029:qk]&quot;</bucket>
+            </map>
+            <map to='#8ace7e'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858422738950:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[sum:age:qk]&quot;</bucket>
+            </map>
+            <map to='#f6c760'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858447249420:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_92323858427232264:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:sex:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;M&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;F&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:age:ok]' palette='tableau20_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>232</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>9</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Chart' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Overview&quot;'>
+          <calculation class='tableau' formula='&quot;Overview&quot;' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Custom SQL Query' id='_EC89F11895ED4BCFA1480778164C0944'>
+            <properties context=''>
+              <relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0 (copy)' name='Custom SQL Query' type='text'>SELECT a.*, c.child_id, c.age, c.sex&#13;
+FROM allergy AS a&#13;
+JOIN session s ON a.allergy_id = s.allergy_id&#13;
+JOIN child c ON s.child_id = c.child_id</relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
     <datasource caption='session+ (dost_chatbot_db)' inline='true' name='federated.0f8t4060sgfuso1919sgh0uiec7a' version='18.1'>
       <connection class='federated'>
         <named-connections>
@@ -46,11 +869,11 @@
             <connection class='mysql' dbname='dost_chatbot_db' odbc-native-protocol='' one-time-sql='' port='3310' server='localhost' source-charset='' username='root' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT b.*, c.age, c.sex&#13;
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT b.*, c.child_id, c.age, c.sex&#13;
 FROM buto_muscle AS b&#13;
 JOIN session s ON b.buto_muscle_id = s.buto_muscle_id&#13;
 JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.false...relation>
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT b.*, c.age, c.sex&#13;
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT b.*, c.child_id, c.age, c.sex&#13;
 FROM buto_muscle AS b&#13;
 JOIN session s ON b.buto_muscle_id = s.buto_muscle_id&#13;
 JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true...relation>
@@ -72,7 +895,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>has_body_pain</remote-name>
@@ -91,7 +913,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>body_pain_intensity</remote-name>
@@ -107,7 +928,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_STINYINT&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>time_body_pain_first_experienced</remote-name>
@@ -126,7 +946,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>time_last_felt_body_pain</remote-name>
@@ -145,7 +964,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>body_pain_duration</remote-name>
@@ -164,7 +982,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>is_body_pain_recurring</remote-name>
@@ -183,7 +1000,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>body_pain_causes</remote-name>
@@ -202,7 +1018,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>did_relief_rest</remote-name>
@@ -221,7 +1036,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>did_relief_sleep</remote-name>
@@ -240,7 +1054,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>did_relief_band_aid</remote-name>
@@ -259,7 +1072,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>takes_body_pain_medication</remote-name>
@@ -278,7 +1090,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>times_taken_body_pain_medication</remote-name>
@@ -297,7 +1108,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>body_pain_medication_type</remote-name>
@@ -316,7 +1126,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>is_body_pain_relieved</remote-name>
@@ -335,7 +1144,24 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
               <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>child_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[child_id]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>child_id</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>false</contains-null>
+            <collation charset='296' flag='3' name='LROOT_S1' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>age</remote-name>
@@ -343,7 +1169,7 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
             <local-name>[age]</local-name>
             <parent-name>[Custom SQL Query]</parent-name>
             <remote-alias>age</remote-alias>
-            <ordinal>16</ordinal>
+            <ordinal>17</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>false</contains-null>
@@ -351,7 +1177,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_STINYINT&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>sex</remote-name>
@@ -359,7 +1184,7 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
             <local-name>[sex]</local-name>
             <parent-name>[Custom SQL Query]</parent-name>
             <remote-alias>sex</remote-alias>
-            <ordinal>17</ordinal>
+            <ordinal>18</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <width>1</width>
@@ -370,7 +1195,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WCHAR&quot;</attribute>
               <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
         </metadata-records>
       </connection>
@@ -450,8 +1274,6 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
       <column datatype='string' hidden='true' name='[felt_sneezing]' role='dimension' type='nominal' />
       <column datatype='string' hidden='true' name='[felt_swellingfelt_redness]' role='dimension' type='nominal' />
       <column datatype='string' hidden='true' name='[has_allergy]' role='dimension' type='nominal' />
-      <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
-      <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
       <column datatype='string' name='[sex]' role='dimension' type='nominal'>
         <aliases>
           <alias key='&quot;F&quot;' value='Female' />
@@ -475,11 +1297,11 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
       <column-instance column='[Calculation_92323858422738950]' derivation='User' name='[usr:Calculation_92323858422738950:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Calculation_92323858447249420]' derivation='User' name='[usr:Calculation_92323858447249420:qk]' pivot='key' type='quantitative' />
       <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_GB' class='hyper' dbname='C:/Users/hylen/Documents/My Tableau Repository/Datasources/session+ (dost_chatbot_db).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='02/27/2023 11:36:36 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_GB' class='hyper' dbname='C:/Users/Edward/Documents/My Tableau Repository/Datasources/session+ (dost_chatbot_db) 6.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='03/01/2023 05:45:13 PM' username='tableau_internal_user'>
           <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <refresh>
-            <refresh-event add-from-file-path='session+ (dost_chatbot_db)' increment-value='%null%' refresh-type='create' rows-inserted='30' timestamp-start='2023-02-27 23:36:35.615' />
+            <refresh-event add-from-file-path='session+ (dost_chatbot_db)' increment-value='%null%' refresh-type='create' rows-inserted='30' timestamp-start='2023-03-01 17:45:12.511' />
           </refresh>
           <metadata-records>
             <metadata-record class='column'>
@@ -707,12 +1529,27 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
+              <remote-name>child_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[child_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>child_id</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Custom SQL Query</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='3' name='LROOT_S1' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_EC89F11895ED4BCFA1480778164C0944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
               <remote-name>age</remote-name>
               <remote-type>20</remote-type>
               <local-name>[age]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>age</remote-alias>
-              <ordinal>15</ordinal>
+              <ordinal>16</ordinal>
               <family>Custom SQL Query</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -726,7 +1563,7 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <local-name>[sex]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>sex</remote-alias>
-              <ordinal>16</ordinal>
+              <ordinal>17</ordinal>
               <family>Custom SQL Query</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -738,34 +1575,9 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
           </metadata-records>
         </connection>
       </extract>
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.810268' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.189732' show-aliased-fields='true' show-hidden-fields='true' show-structure='true' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.946136' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.0538642' show-aliased-fields='true' show-hidden-fields='true' show-structure='true' />
       <style>
         <style-rule element='mark'>
-          <encoding attr='color' field='[none:age:ok]' palette='tableau20_10_0' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>6</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>232</bucket>
-            </map>
-            <map to='#a0cbe8'>
-              <bucket>7</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>8</bucket>
-            </map>
-            <map to='#ffbe7d'>
-              <bucket>9</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:sex:nk]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>&quot;M&quot;</bucket>
-            </map>
-            <map to='#ff9da7'>
-              <bucket>&quot;F&quot;</bucket>
-            </map>
-          </encoding>
           <encoding attr='color' field='[:Measure Names]' type='palette'>
             <map to='#4e79a7'>
               <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858426740743:qk]&quot;</bucket>
@@ -810,6 +1622,31 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
               <bucket>&quot;[federated.0f8t4060sgfuso1919sgh0uiec7a].[usr:Calculation_92323858427232264:qk]&quot;</bucket>
             </map>
           </encoding>
+          <encoding attr='color' field='[none:age:ok]' palette='tableau20_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>232</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>9</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:sex:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;M&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;F&quot;</bucket>
+            </map>
+          </encoding>
         </style-rule>
       </style>
       <semantic-values>
@@ -824,7 +1661,7 @@ JOIN child c ON s.child_id = c.child_id</_.fcp.ObjectModelEncapsulateLegacy.true
         <objects>
           <object caption='Custom SQL Query' id='_EC89F11895ED4BCFA1480778164C0944'>
             <properties context=''>
-              <relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT b.*, c.age, c.sex&#13;
+              <relation connection='mysql.0g8axqf0lmp9h418oa56o03py4s0' name='Custom SQL Query' type='text'>SELECT b.*, c.child_id, c.age, c.sex&#13;
 FROM buto_muscle AS b&#13;
 JOIN session s ON b.buto_muscle_id = s.buto_muscle_id&#13;
 JOIN child c ON s.child_id = c.child_id</relation>
@@ -872,12 +1709,6 @@ JOIN child c ON s.child_id = c.child_id</relation>
             <column datatype='string' name='[did_relief_band_aid]' role='dimension' type='nominal' />
             <column datatype='string' name='[did_relief_rest]' role='dimension' type='nominal' />
             <column datatype='string' name='[did_relief_sleep]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_dairy]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_drugs]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_eggs]' role='dimension' type='nominal' />
-            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_others]' role='dimension' type='nominal' />
-            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
             <column-instance column='[Calculation_92323858450083853]' derivation='None' name='[none:Calculation_92323858450083853:nk]' pivot='key' type='nominal' />
             <column-instance column='[Calculation_1703768102009507840]' derivation='User' name='[usr:Calculation_1703768102009507840:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_1703768102009667585]' derivation='User' name='[usr:Calculation_1703768102009667585:qk]' pivot='key' type='quantitative' />
@@ -1017,12 +1848,6 @@ JOIN child c ON s.child_id = c.child_id</relation>
             <column datatype='string' name='[did_relief_band_aid]' role='dimension' type='nominal' />
             <column datatype='string' name='[did_relief_rest]' role='dimension' type='nominal' />
             <column datatype='string' name='[did_relief_sleep]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_dairy]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_drugs]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_eggs]' role='dimension' type='nominal' />
-            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_others]' role='dimension' type='nominal' />
-            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
             <column-instance column='[Calculation_92323858450083853]' derivation='None' name='[none:Calculation_92323858450083853:nk]' pivot='key' type='nominal' />
             <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
             <column-instance column='[Calculation_1703768102009507840]' derivation='User' name='[usr:Calculation_1703768102009507840:qk]' pivot='key' type='quantitative' />
@@ -1162,12 +1987,6 @@ JOIN child c ON s.child_id = c.child_id</relation>
             <column datatype='string' name='[did_relief_band_aid]' role='dimension' type='nominal' />
             <column datatype='string' name='[did_relief_rest]' role='dimension' type='nominal' />
             <column datatype='string' name='[did_relief_sleep]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_dairy]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_drugs]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_eggs]' role='dimension' type='nominal' />
-            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_nuts]' role='dimension' type='nominal' />
-            <column datatype='string' name='[is_allergic_to_others]' role='dimension' type='nominal' />
-            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[is_allergic_to_seafood]' role='dimension' type='nominal' />
             <column-instance column='[Calculation_92323858450083853]' derivation='None' name='[none:Calculation_92323858450083853:nk]' pivot='key' type='nominal' />
             <column-instance column='[sex]' derivation='None' name='[none:sex:nk]' pivot='key' type='nominal' />
             <column datatype='string' name='[sex]' role='dimension' type='nominal'>
@@ -1280,6 +2099,71 @@ JOIN child c ON s.child_id = c.child_id</relation>
       </table>
       <simple-id uuid='{D4AF475D-1CEC-4157-9417-EFEF59535788}' />
     </worksheet>
+    <worksheet name='Total'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='session+ (dost_chatbot_db) (2)' name='federated.0f8t4060sgfuso1919sgh0uiec7a (copy)' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0f8t4060sgfuso1919sgh0uiec7a (copy)'>
+            <column caption='Num of Children' datatype='integer' name='[Calculation_424464333067116544]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD(child_id)' />
+            </column>
+            <column datatype='string' name='[child_id]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_424464333067116544]' derivation='User' name='[usr:Calculation_424464333067116544:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' value='19' />
+            <format attr='font-weight' value='bold' />
+            <format attr='vertical-align' data-class='subtotal' scope='rows' value='bottom' />
+            <format attr='text-align' value='left' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='vertical-align' scope='rows' value='bottom' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_424464333067116544:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Total Num. Children:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_424464333067116544:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run bold='false'><![CDATA[These data are based on the conversations of <]]></run>
+                <run bold='false'>[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_424464333067116544:qk]</run>
+                <run bold='false'>&gt; students with our chatbot.</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <tooltip-style tooltip-mode='none' />
+      </table>
+      <simple-id uuid='{0E6D8DDE-9C99-49F7-BEB3-1A68BDD0EE1E}' />
+    </worksheet>
   </worksheets>
   <dashboards>
     <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard - Relief'>
@@ -1300,9 +2184,9 @@ JOIN child c ON s.child_id = c.child_id</relation>
       </datasource-dependencies>
       <zones>
         <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='97298' id='5' param='horz' type-v2='layout-flow' w='82976' x='693' y='1351'>
-            <zone h='97298' id='1' param='vert' type-v2='layout-flow' w='82976' x='693' y='1351'>
-              <zone h='97295' id='3' name='Relief' show-title='false' w='82976' x='693' y='1351'>
+          <zone h='97298' id='5' param='horz' type-v2='layout-flow' w='82975' x='693' y='1351'>
+            <zone h='97298' id='1' param='vert' type-v2='layout-flow' w='82975' x='693' y='1351'>
+              <zone h='97295' id='3' name='Relief' show-title='false' w='82975' x='693' y='1351'>
                 <layout-cache cell-count-h='4' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -1311,7 +2195,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='0' id='8' name='Relief - Sex' show-title='false' w='82976' x='693' y='98646'>
+              <zone h='0' id='8' name='Relief - Sex' show-title='false' w='82975' x='693' y='98646'>
                 <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -1320,7 +2204,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='0' id='10' name='Relief - Age' show-title='false' w='82976' x='693' y='98646'>
+              <zone h='0' id='10' name='Relief - Age' show-title='false' w='82975' x='693' y='98646'>
                 <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -1331,8 +2215,8 @@ JOIN child c ON s.child_id = c.child_id</relation>
               </zone>
             </zone>
           </zone>
-          <zone fixed-size='160' h='97298' id='4' is-fixed='true' param='vert' type-v2='layout-flow' w='15638' x='83669' y='1351'>
-            <zone h='8783' id='7' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15638' x='83669' y='1351'>
+          <zone fixed-size='160' h='80406' id='4' is-fixed='true' param='vert' type-v2='layout-flow' w='15639' x='83668' y='1351'>
+            <zone h='8783' id='7' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15639' x='83668' y='1351'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -1340,7 +2224,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
-            <zone h='14865' id='6' name='Relief' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15638' x='83669' y='10134'>
+            <zone h='14865' id='6' name='Relief' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15639' x='83668' y='10134'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -1348,7 +2232,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
-            <zone h='1520' id='9' name='Relief - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15638' x='83669' y='24999'>
+            <zone h='1520' id='9' name='Relief - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15639' x='83668' y='24999'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -1356,7 +2240,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
-            <zone h='1520' id='11' name='Relief - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15638' x='83669' y='26519'>
+            <zone h='1520' id='11' name='Relief - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15639' x='83668' y='26519'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -1364,6 +2248,14 @@ JOIN child c ON s.child_id = c.child_id</relation>
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
+          </zone>
+          <zone h='16892' id='62' name='Total' show-title='false' w='15639' x='83668' y='81757'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
           </zone>
           <zone-style>
             <format attr='border-color' value='#000000' />
@@ -1375,11 +2267,11 @@ JOIN child c ON s.child_id = c.child_id</relation>
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='1150' minheight='1150' sizing-mode='vscroll' />
+          <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='61' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='97298' id='60' param='vert' type-v2='layout-flow' w='98614' x='693' y='1351'>
-                <zone fixed-size='280' h='97295' id='3' is-fixed='true' name='Relief' show-title='false' w='82976' x='693' y='1351'>
+            <zone h='100000' id='66' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97298' id='65' param='vert' type-v2='layout-flow' w='98614' x='693' y='1351'>
+                <zone fixed-size='280' h='97295' id='3' is-fixed='true' name='Relief' show-title='false' w='82975' x='693' y='1351'>
                   <layout-cache cell-count-h='4' minwidth='212' non-cell-size-h='55' type-h='cell' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1389,7 +2281,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='14865' id='6' name='Relief' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15638' x='83669' y='10134'>
+                <zone h='14865' id='6' name='Relief' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[:Measure Names]' show-title='false' type-v2='color' w='15639' x='83668' y='10134'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1398,7 +2290,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='8783' id='7' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15638' x='83669' y='1351'>
+                <zone h='8783' id='7' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15639' x='83668' y='1351'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1407,7 +2299,16 @@ JOIN child c ON s.child_id = c.child_id</relation>
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='0' id='8' is-fixed='true' name='Relief - Sex' show-title='false' w='82976' x='693' y='98646'>
+                <zone fixed-size='127' h='16892' id='62' is-fixed='true' name='Total' show-title='false' w='15639' x='83668' y='81757'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='0' id='8' is-fixed='true' name='Relief - Sex' show-title='false' w='82975' x='693' y='98646'>
                   <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1417,7 +2318,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='1520' id='9' name='Relief - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15638' x='83669' y='24999'>
+                <zone h='1520' id='9' name='Relief - Sex' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:sex:nk]' show-title='false' type-v2='color' w='15639' x='83668' y='24999'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1426,7 +2327,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='0' id='10' is-fixed='true' name='Relief - Age' show-title='false' w='82976' x='693' y='98646'>
+                <zone fixed-size='280' h='0' id='10' is-fixed='true' name='Relief - Age' show-title='false' w='82975' x='693' y='98646'>
                   <layout-cache has-max-size-w='true' maxwidth='1' minwidth='1' type-h='cell' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1436,7 +2337,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='1520' id='11' name='Relief - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15638' x='83669' y='26519'>
+                <zone h='1520' id='11' name='Relief - Age' pane-specification-id='0' param='[federated.0f8t4060sgfuso1919sgh0uiec7a].[none:age:ok]' show-title='false' type-v2='color' w='15639' x='83668' y='26519'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1459,7 +2360,7 @@ JOIN child c ON s.child_id = c.child_id</relation>
       <simple-id uuid='{6DD58197-02D4-41B1-822F-74BB1E579276}' />
     </dashboard>
   </dashboards>
-  <windows source-height='30'>
+  <windows source-height='51'>
     <window class='worksheet' name='Relief'>
       <cards>
         <edge name='left'>
@@ -1575,6 +2476,49 @@ JOIN child c ON s.child_id = c.child_id</relation>
       </viewpoint>
       <simple-id uuid='{65B5BE71-5CC0-4E5F-A736-87D3AD4D108C}' />
     </window>
+    <window class='worksheet' name='Total'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0f8t4060sgfuso1919sgh0uiec7a (copy)].[usr:Calculation_424464333067116544:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>30</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+      </viewpoint>
+      <simple-id uuid='{AD608A0A-BB84-4704-9DC1-0411C63E13DE}' />
+    </window>
     <window class='dashboard' maximized='true' name='Dashboard - Relief'>
       <viewpoints>
         <viewpoint name='Relief'>
@@ -1594,6 +2538,9 @@ JOIN child c ON s.child_id = c.child_id</relation>
           </highlight>
         </viewpoint>
         <viewpoint name='Relief - Sex'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total'>
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
@@ -2022,6 +2969,43 @@ JOIN child c ON s.child_id = c.child_id</relation>
       EJYmARCWJgEQliYBEJYmARCWJgEQliYBEJYmARCWJgEQliYBEJYmARCWJgEQliYBEJYmARCW
       JgEQliYBEJYmARCWJgEQliYBEJYmARCWJgEQliYBEJYmARCW9v8BLJ7VqZk+bUsAAAAASUVO
       RK5CYII=
+    </thumbnail>
+    <thumbnail height='23' name='Total' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAAAXCAYAAABd50CQAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAHCklEQVR4nO2ce1RU1xWHv5lhGBge8n6VoCBEqyKJpo1W8UF8NlpZKhrURqKttT6aWqtW
+      bao0GhNpGs2qmqRCaY0aYZnWd5ogK2rQUKQYAQdRUR4iggORgRlm7jz6B+U2EwQCtT469/vz
+      3H3P2Wef/Zu9z6xZI7PZbDYkJBwU+cN2QELiYSIJQMKhkQQg4dBIApBwaCQBSDg0kgAkHBpJ
+      ABIOjVNXBlk3dQ/CDwmJh4JUASQcGkkAEg6NJAAJh0YSgIRDIwlAwqHp8lugr7N3azKFOZ+2
+      Gx/3wny+M+F5zvwtkykLl9wP33rM0dSdxMYn0MvX/6H60R0qSoopv3yJ2GkJD3zttvOMHjHm
+      f77WXW3dI5EjbXRbAHNXbwA2cFdbx9HUncxctgqVWg20bu5x4nEUyuOEUa/nk/3pjE9MEnPk
+      UUNqgSQcmm5XgK5orK9j/5ubKDp7GrlCzsR5Cxn5g9ayfqXgPIfe2472VjUBYb15YcV6gsP7
+      Ulmq4cBbr3Gnugq1uwfPL1jC0OcmYRYETn24n9N/PYBZEBg8YjTxP12BytX+0+R2xQ0ytm2h
+      uuwqTkolvfz8iY1PQDAZOf6ndzifdQLBZMQvJJTZK9bh6evHzlVLuaut47PDmUBrCzd6RuI9
+      7Z948tt265WXFJOxbQv1NbeQKxQMmzSVyUmLcVIqOXMok2/1jaL43BkunD7J/PWbCewdzrG0
+      XeRn/x25XE7stATiZr+Ik1JpN29Z4QVyPzqM9lY1IRGRzPr5WgLD+qBv0pG57XVKC/KwWiyE
+      RvVjzqoNeAcE9ih2RoNe9MdmtaByVTN96cp2Z9l2Xneqq/ALCWXaopeJevoZjHo9R9N2YrVa
+      0OTm0KJvZkjcROIXrxD3VFFSTGryaox6vRjjuas3ENZ/YI9y5Ks01N5mX0oyVVcu4+rmJu65
+      R/72NNE7wtPHv7W/W/mfEmjU67l+6SJ7XnsFi8UMwO3y66S/upYlKTtoqK3BaNAzaHgsA4fF
+      Mmj4KAAOvbudvE+OiXMXnMrCbDb/uw1DDPT1S4Us//274tjR1J0AOCmdCXiiN67u7gj1Ru5U
+      V3Fk9x9YuDGFtWkZ7Vogm83Wof1XS7injx8+QcF8WVeLxSyQc/RD+gyIJnrEGASTkZry60z5
+      0TKm/ng5gsnInzet4+oX/wTAAmRnvo9coWBcYpJd7CKin2L+rze32lnMHH7vbeJm/RA3Ty8C
+      wnpTrilE36SjslTD8fR3mLt6Q7djN3PZKj7em8rkpJ+ISX+vO13RuTNUl13hl7v2iGMf703D
+      2GIgKmYoKlc14xOTSPjZGjHmzY1firEM6z+QdamZ7Vqgu9q6HuVI27yVV0rIPXGYJVt3IJPJ
+      /mt/77sAOsIsCIyekciEuQvaPRs8cix9o5/m6hf5aPLOock7y+xfrEcml7F4y9v0GRDd4bxW
+      qxW5/N6dXNXVy1SWanh5227cenmJ95aO+Kb2nx7cx7MTpvLSb95ALpeTtT9dfKZ0VhHa90nx
+      cKwWC2oPT9b8cT/eAUEdrv11LIIZU0sLACXnP8ciCKzZ/QEqVzUVJcXkZR0Huh87Q3MTAHLZ
+      o9f9dpYjbTgpnZErFPdtzQcWhaDe4VzOz6Ws6AI2mw3BZESTdw59k45rFwuwWCzEjHqOcYlJ
+      qFzVmE0mwvoN4GTGX9A1aAForNdy6R9n7eb18g/kUm4ON6+VYrPZqKuqoL7mJgAWQcDdywcX
+      N3f0TToKc05haGoU3zU066i5UYbNZsNsMnVpD61VAmx4B7Ym881rpVwrLOhw3ypXNV7+QWRn
+      7MFo0Is+Xi++2M7W1GLAarViMZvJOXIQhcIJdy9vzIIJL/9AlCoXGuu1FJ49hWA0AnQ7di5q
+      NwzNTeRnf4TVakXfpOOGpqidLyERkZRriqgs1WC1Wqks1VCuKSIkIrKro7ajobaGhroacV+d
+      0VmOtOEbFEKLvonizz8T/W+oremxvw+sAviFhBI3ax4fvLmJxnotancPhsRNJHLwEBrr73Dg
+      rc001mvx8PZl5vJVqFzVPDVqHDU3yti6aC5mQcAnKJgJc16ym9fLP4CR02aSlrwGg66R8IEx
+      KFUqAEKj+nP+5AleSZiIq4cnw78fj4vaTXx30PBYMra/jkHXyKQXF/G9KdM7tQeQyWQMGTuR
+      9FfX0Xy3gX5Dn8UnMLjTvY+dOYeDO37Hb+fFY7NaCA6PZMrCpXY2CqUzl/Nzyc54H4D+zwxj
+      +tKVKBRO9BvyXfZuTeZY2i58g0OIiY3DydkZoNuxk8lkjJ+zgH0pyRzZvQPvgECCwyPB/pqD
+      T2AwY2bMEe8XbT21T2AwRr3+G525Sq0mYlAMu9YsxywIzPvVRkIiojq07yxH2nB2cWHy/MXs
+      S0lm7xsb7e4APfFX1tW/Qki/BpX4f+Zfv4HbDQHtg5EAAAAASUVORK5CYII=
     </thumbnail>
   </thumbnails>
 </workbook>
