@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8" />
 
-		<title>Health Chatbot</title>
+		<title>Health Chatbot | Data Visualization Portal</title>
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -15,7 +15,8 @@
 
 		<link rel="stylesheet" href="style/colors.css" />
 		<link rel="stylesheet" href="style/style.css" />
-		<script src="scripts/array.js"></script>
+
+		<script src="script/nav-viz.js"></script>
 	</head>
 
 	<body>
@@ -24,7 +25,7 @@
 				<a class="navbar-brand">
 					<img class="icon" src="assets/PCIEERD-Logo1.png" class="d-inline-block" />
 					<img id="dlsu-logo" class="icon" src="assets/dlsulogowhite.png" class="d-inline-block" />
-					HEALTH CHATBOT
+					HEALTH CHATBOT &ndash; Data Visualization Portal
 				</a>
 			</div>
 		</nav>
@@ -35,14 +36,14 @@
 					<div class="accordion" id="systems">
 						<div class="accordion-item">
 							<h2 class="accordion-header">
-								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">🤧 Allergy</button>
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">🤧 Allergy</button>
 							</h2>
-							<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+							<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 								<div class="accordion-body">
-									<ul>
-										<li>Allergens</li>
-										<li>Symptoms</li>
-										<li>Interventions</li>
+									<ul class="viz">
+										<li id="allergy-allergens">Allergens</li>
+										<li id="allergy-symptoms">Symptoms</li>
+										<li id="allergy-interventions">Interventions</li>
 									</ul>
 								</div>
 							</div>
@@ -52,20 +53,30 @@
 								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Accordion Item #2</button>
 							</h2>
 							<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-								<div class="accordion-body">
-									<strong>This is the second item's accordion body.</strong>
-									It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-									<code>.accordion-body</code>
-									, though the transition does limit overflow.
-								</div>
+								<div class="accordion-body"></div>
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="col-sm-9" id="dashboard-container">
-					<h4>Hello</h4>
-					<tableau-viz id="allergy-allergen" src="https://public.tableau.com/views/Allergy_16770827471540/Dashboard-Allergens?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link" toolbar="bottom" hide-tabs></tableau-viz>
+					<h4 id="viz-title">Development of Multi-lingual Chatbot for Health Monitoring of Public School Children</h4>
+
+					<div id="projec-desc">
+						<br />
+						<p>
+							Welcome! This is the data visualization portal of the chatbot-assisted health monitoring system developed by
+							<b>De La Salle University's Technology, Education, Entertainment, Empathy, Design (TE3D) House</b>
+							under the
+							<b>Advanced Research Institute for Informatics, Computing and Networking (AdRIC)</b>.
+							This project is funded by the Department of Science and Technology &ndash; Philippine Council for Industry,
+							Energy, and Emerging Technology Research and Development (DOST-PCIEERD).
+						</p>
+					</div>
+
+					<div id = "viz-div">
+						<tableau-viz src="" toolbar="bottom" hide-tabs></tableau-viz>
+					</div>
 				</div>
 			</div>
 		</div>
