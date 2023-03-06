@@ -36,9 +36,9 @@
 					<div class="accordion" id="systems">
 						<div class="accordion-item">
 							<h2 class="accordion-header">
-								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">🤧 Allergy</button>
+								<button id="allergy-btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergy" aria-expanded="false" aria-controls="allergy">🤧 Allergy</button>
 							</h2>
-							<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+							<div id="allergy" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 								<div class="accordion-body">
 									<ul class="viz">
 										<li id="allergy-allergens">Allergens</li>
@@ -62,7 +62,9 @@
 				<div class="col-sm-9" id="dashboard-container">
 					<h4 id="viz-title">Development of Multi-lingual Chatbot for Health Monitoring of Public School Children</h4>
 
-					<div id="projec-desc">
+					<tableau-viz src="" toolbar="bottom" hide-tabs></tableau-viz>
+
+					<div id="project-desc">
 						<br />
 						<p>
 							Welcome! This is the data visualization portal of the chatbot-assisted health monitoring system developed by
@@ -72,10 +74,6 @@
 							This project is funded by the Department of Science and Technology &ndash; Philippine Council for Industry,
 							Energy, and Emerging Technology Research and Development (DOST-PCIEERD).
 						</p>
-					</div>
-
-					<div id = "viz-div">
-						<tableau-viz src="" toolbar="bottom" hide-tabs></tableau-viz>
 					</div>
 				</div>
 			</div>
