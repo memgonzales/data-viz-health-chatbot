@@ -25,7 +25,7 @@
 				<a class="navbar-brand">
 					<img class="icon" src="assets/dlsulogowhite.png" class="d-inline-block" />
 					<img id="logo-2" class="icon" src="assets/PCIEERD-Logo1.png" class="d-inline-block" />
-					Health Chatbot &ndash; Data Visualization Portal
+					<span id="website-title">Health Chatbot &ndash; Data Visualization Portal</span>
 				</a>
 			</div>
 		</nav>
@@ -50,7 +50,7 @@
 						</div>
 
 						<div class="accordion-item">
-							<h2 class="accordion-header" id="headingTwo">
+							<h2 class="accordion-header">
 								<button id="buto-muscle-btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#buto-muscle" aria-expanded="false" aria-controls="buto-muscle">💪 Musculoskeletal</button>
 							</h2>
 							<div id="buto-muscle" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#systems">
@@ -63,15 +63,15 @@
 						</div>
 
 						<div class="accordion-item">
-							<h2 class="accordion-header" id="headingTwo">
-								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">😷 Cough & Colds</button>
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cough-colds" aria-expanded="false" aria-controls="cough-colds">😷 Cough & Colds</button>
 							</h2>
-							<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#systems">
+							<div id="cough-colds" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#systems">
 								<div class="accordion-body">
 									<ul class="viz">
-										<li id="allergy-allergens">Allergens</li>
-										<li id="allergy-symptoms">Symptoms</li>
-										<li id="allergy-remedies">Remedies</li>
+										<li id="cough-colds-cough-details">Cough Details</li>
+										<li id="cough-colds-fever-details">Fever Details</li>
+										<li id="cough-colds-medication">Medication</li>
 									</ul>
 								</div>
 							</div>
@@ -80,7 +80,7 @@
 				</div>
 
 				<div class="col-sm-9" id="dashboard-container">
-					<h4 id="viz-title">Development of Multi-lingual Chatbot for Health Monitoring of Public School Children</h4>
+					<h4 id="viz-title"></h4>
 
 					<tableau-viz src="" toolbar="bottom" hide-tabs></tableau-viz>
 

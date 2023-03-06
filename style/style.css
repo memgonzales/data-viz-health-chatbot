@@ -3,6 +3,10 @@ html {
 	min-height: 100%;
 }
 
+#website-title {
+	cursor: pointer;
+}
+
 nav {
 	background-color: var(--green-emphasis);
 	color: white;
@@ -24,7 +28,7 @@ nav {
 
 tableau-viz {
 	display: none;
-	height: 71vh;
+	height: 75vh;
 	width: 98%;
 }
 
