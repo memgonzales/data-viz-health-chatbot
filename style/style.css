@@ -8,6 +8,16 @@ nav {
 	color: white;
 }
 
+.icon {
+	margin-left: 1em;
+	margin-right: 0.5em;
+	width: 1.25em;
+}
+
+#dlsu-logo {
+	margin-left: 0;
+}
+
 #dashboard-container {
 	padding: 2em;
 }
