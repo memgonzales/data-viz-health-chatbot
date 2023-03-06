@@ -9,7 +9,7 @@ nav {
 }
 
 .icon {
-	margin-left: 1em;
+	margin-left: 1.5em;
 	margin-right: 0.5em;
 	width: 1.25em;
 }
@@ -23,13 +23,18 @@ nav {
 }
 
 tableau-viz {
-	height: 50vh;
+	display: none;
+	height: 71vh;
 	width: 98%;
 }
 
+#project-desc {
+	display: none;
+}
+
 #systems {
-	padding: 1em;
-	padding-top: 1.75em;
+	padding: 1.75em;
+	padding-right: 0;
 }
 
 .accordion-button:not(.collapsed) {
