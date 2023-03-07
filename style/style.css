@@ -61,8 +61,18 @@ button:focus {
 	box-shadow: 0 0 0 0.12rem var(--green-light) !important;
 }
 
+.accordion-body {
+	padding: 0.5em;
+	padding-bottom: 0.25em;
+}
+
 .viz > li {
 	cursor: pointer;
+	margin-left: 1em;
+}
+
+.viz > li:hover {
+	text-decoration: underline;
 }
 
 .viz {
