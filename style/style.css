@@ -63,12 +63,14 @@ button:focus {
 
 .accordion-body {
 	padding: 0.5em;
+	padding-top: 0.7em;
 	padding-bottom: 0.25em;
 }
 
 .viz > li {
 	cursor: pointer;
-	margin-left: 1em;
+	margin-left: 0.75em;
+	padding-bottom: 0.5em;
 }
 
 .viz > li:hover {
